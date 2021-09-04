@@ -3,6 +3,7 @@ Mod Maker: URROVA
 Imp Player: taken from Doom Empathy
 Some of the sounds from the ZDoom Demo Wad and snd.wad (sound demo)
 Status bar Imp Face: Impatience_52.wads
+CNT2** sprites: Ancient Aliens
 
 === Texture packs used | Packs de texturas usadas ===
 Nightmare texture pack + Revamped COMPUTE1 texture: Nightmare
@@ -16,6 +17,8 @@ BlackGreenTechTexturesPack.wad
 
 Post your doom textures DW thread{
 	Gez
+	DooMAD
+	Cacodemon187
 }
 
 === Realm667 resource wads used | Recursos de realm667 usados ===
@@ -29,7 +32,7 @@ OilDrum.awd by Captain Toenail
 PipePack.wad
 UACHolograms.wad
 FlyingImp.wad
-Annihilator.wad //For UAC Cyberdemon
+Annihilator.wad //For UAC Cyberdemons
 
 //These only i picked the sprites for experimental weapon decoration.
 //De estos solo agarre sprites de pickup para las armas experimentales de decoracion
@@ -41,3 +44,10 @@ LaserCannon.wad
 
 === Sonidos | Sounds ===
 DSPLASMA from Doom 64 / PSX Doom
+
+
+
+
+
+im so unorganized, for the next mod i have to separate texture groups/folders and not copy/paste textures on
+the textures folder.

@@ -1,6 +1,7 @@
 class PlasmaShotgunBall : ArachnotronPlasma{
 	default{
 		translation 2;
+		speed 20;
 	}
 	states{
 		Spawn:
@@ -13,7 +14,8 @@ class PlasmaShotgunBall : ArachnotronPlasma{
 
 class impplayerball : doomimpball{
 	default{
-		speed 14;
+		speed 15;
+		damage 4;
 	}
 }
 
@@ -180,5 +182,66 @@ class BaronBall_SuperSuperFast : BaronBall{
 	default{
 	Speed 30;
 	Translation "112:127=250:254";
+	}
+}
+
+//Barril Explosivo como proyectil
+class ExplosiveBarrelProjectile : Actor{
+	default{
+		Health 20;
+		Radius 10;
+		Height 42;
+		Projectile;
+		-NOGRAVITY;
+		+NODAMAGETHRUST;
+		Speed 30;
+		Damage 20;
+		DeathSound "world/barrelx";
+	}
+	states{
+		Spawn:
+			BEXP AB 6 Bright;
+			Loop;
+		Death:
+			BEXP B 5 Bright A_Scream;
+			BEXP C 5 Bright;
+			BEXP D 5 Bright {
+			A_Explode();
+			A_RadiusThrust();
+			}
+			BEXP E 10 Bright;
+			TNT1 A 1050 Bright A_BarrelDestroy;
+			Stop;
+	}
+}
+
+//Barril Explosivo como proyectil
+class OilDrumProjectile : Actor{
+	default{
+		Health 20;
+		Radius 10;
+		Height 42;
+		Projectile;
+		-NOGRAVITY;
+		+NODAMAGETHRUST;
+		Speed 30;
+		Damage 20;
+		DeathSound "world/barrelx";
+	}
+	states{
+		Spawn:
+			OILD A 6 Bright;
+			Loop;
+		Death:
+			OILD B 5 BRIGHT;
+			OILD C 5 BRIGHT {
+			A_Explode();
+			A_RadiusThrust();
+			}
+			OILC CCCCC 0 BRIGHT A_SpawnItemEx("BarrelFlames", random (0, 40), random (0, 40), 0, 0, 0, 0, random (0, 360)) ;
+			OILD D 10 BRIGHT;
+			OILD D 1050 BRIGHT A_BarrelDestroy;
+			OILD D 5 A_Respawn;
+			Wait;
 	}
 }
