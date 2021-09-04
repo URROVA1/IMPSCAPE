@@ -1,0 +1,202 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	MAP01
+	{
+		defaultwalltexture = "textures/SUPP232A";
+		overridemiddletexture = false;
+		defaultceiltexture = "SHAWN2";
+		overrideceiltexture = false;
+		custombrightness = 196;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 1;
+				location = "C:\\Users\\DELLNEGRA\\Documents\\Proyectos\\DOOM\\IMPSCAPE\\pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		viewpositiony = -2910.063f;
+		viewpositionx = 2032.227f;
+		customceilheight = 128;
+		
+		plugins
+		{
+			
+			stairsectorbuilder
+			{
+				
+				prefabs
+				{
+					
+					prefab1
+					{
+						name = "[Previous]";
+						numberofsectors = 9;
+						outervertexmultiplier = 1;
+						innervertexmultiplier = 1;
+						stairtype = 0;
+						sectordepth = 32;
+						spacing = 0;
+						frontside = true;
+						singlesectors = false;
+						distinctsectors = false;
+						singledirection = false;
+						distinctbaseheights = false;
+						flipping = 0;
+						numberofcontrolpoints = 1;
+						applyfloormod = true;
+						floormod = 0;
+						applyceilingmod = true;
+						ceilingmod = 0;
+						applyfloortexture = false;
+						floortexture = "";
+						applyceilingtexture = false;
+						ceilingtexture = "";
+						applyuppertexture = false;
+						uppertexture = "BRGRGY03";
+						upperunpegged = true;
+						applymiddletexture = false;
+						middletexture = "-";
+						applylowertexture = false;
+						lowertexture = "BRGRGY03";
+						lowerunpegged = true;
+					}
+				}
+			}
+			
+			threedfloormode
+			{
+				
+				controlsectorarea
+				{
+					usecustomtagrange = false;
+					outerleft = 10304;
+					outerright = 11520;
+					outertop = 10432;
+					outerbottom = 9408;
+				}
+			}
+		}
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsetx = 0;
+			backsource = 0;
+			gridoriginy = 0;
+			backscaley = 100;
+			gridrotate = 0;
+			backscalex = 100;
+			gridoriginx = 0;
+			gridsize = 64;
+			background = "";
+			backoffsety = 0;
+		}
+		viewscale = 0.3937341f;
+		defaulttoptexture = "textures/SUPP232A";
+		overridebottomtexture = false;
+		useresourcesinreadonlymode = false;
+		defaultbottomtexture = "textures/SUPP232A";
+		defaultfloortexture = "SHAWN2";
+		overrideceilheight = false;
+		overridebrightness = false;
+		overridefloorheight = false;
+		overridetoptexture = false;
+		uselongtexturenames = true;
+		overridefloortexture = false;
+		
+		fieldtypes
+		{
+			
+			linedef
+			{
+				alpha = 1;
+				renderstyle = 2;
+				locknumber = 0;
+			}
+			
+			sidedef
+			{
+				offsetx_mid = 1;
+				offsetx_bottom = 1;
+				offsetx_top = 1;
+				offsety_top = 1;
+				offsety_bottom = 1;
+				offsety_mid = 1;
+				light = 0;
+				scaley_top = 1;
+				scalex_bottom = 1;
+				scalex_top = 1;
+				scalex_mid = 1;
+				lightabsolute = 3;
+				scaley_mid = 1;
+			}
+			
+			sector
+			{
+				xpanningceiling = 1;
+				ypanningceiling = 1;
+				lightceiling = 0;
+				lightceilingabsolute = 3;
+				xpanningfloor = 1;
+				lightcolor = 0;
+				rotationceiling = 1;
+				fadecolor = 0;
+				ypanningfloor = 1;
+				xscaleceiling = 1;
+				yscaleceiling = 1;
+				rotationfloor = 1;
+				xscalefloor = 1;
+				yscalefloor = 1;
+				lightfloor = 0;
+				lightfloorabsolute = 3;
+				color_floor = 0;
+				color_wallbottom = 0;
+				user_managed_3d_floor = 3;
+				floor_reflect = 1;
+				ceilingglowcolor = 0;
+				floorglowcolor = 0;
+			}
+			
+			thing
+			{
+				renderstyle = 2;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 391;
+				activetab = true;
+			}
+		}
+	}
+}
