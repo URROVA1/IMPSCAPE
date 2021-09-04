@@ -14,6 +14,7 @@ smashudmf.pk3 //Breakable glass
 ultratex.wad
 CageTex2.wad
 BlackGreenTechTexturesPack.wad
+GothicPack1 by gothic
 
 Post your doom textures DW thread{
 	Gez

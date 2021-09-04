@@ -1,0 +1,9 @@
+00: Computadora procesando
+01: Computadora procesando 2
+02: Computadora fallando
+03: Computadora haciendo nada, alto miedo ese sonido xD
+04: Computadora procesando 3
+05: Maquina
+06: igual que 04
+07: el de opulenz + onda cuadrada
+08: otro de opulenz

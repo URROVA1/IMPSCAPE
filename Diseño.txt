@@ -34,7 +34,7 @@ MAP01: Demon Storage (Prison) #4
 	
 	Tambien tenes que liberar otros demonios, para que luchen aliados a vos.
 	
-	Aca te enseñan ademas de eso a agarrar barriles y tirarlos, con un puzzle de tirarle un barril a una maquina.
+	Aca te enseñan ademas de eso a agarrar barriles y tirarlos.
 	
 MAP02: Demon Control Lab #2
 	En este nivel te encontras con los demonios controlados (los grises), y algunos estan mejorados como el imp que

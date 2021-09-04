@@ -5,9 +5,16 @@ defaultmap{
 	AllowFreelook
 }
 
+map TITLEMAP "TituloMapa"{
+	music = ""
+	sky1 = "SKYESSL1"
+}
+
 map INTRO "XD"{
+	sky1 = "FIRESK00"
 	next = "MAP01"
 	LevelNum = 0
+	nointermission
 }
 
 map TESTROOM "Fuck You So"{
@@ -19,6 +26,8 @@ map MAP01 "Demon storage (prison) D"{
 	music = "D_IN_CIT"
 	next = "MAP02"
 	LevelNum = 1
+	resetinventory
+	resethealth
 }
 
 map MAP02 "Demon control lab #2"{

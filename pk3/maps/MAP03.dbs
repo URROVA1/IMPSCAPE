@@ -26,8 +26,8 @@ maps
 				notfortesting = 0;
 			}
 		}
-		viewpositiony = -6047.265f;
-		viewpositionx = 2851.94f;
+		viewpositiony = -5516.965f;
+		viewpositionx = 7260.417f;
 		customceilheight = 128;
 		
 		plugins
@@ -42,7 +42,7 @@ maps
 					outerleft = -512;
 					outerright = 0;
 					outertop = 512;
-					outerbottom = 0;
+					outerbottom = -64;
 				}
 			}
 			
@@ -59,7 +59,7 @@ maps
 						outervertexmultiplier = 1;
 						innervertexmultiplier = 1;
 						stairtype = 0;
-						sectordepth = 12;
+						sectordepth = 32;
 						spacing = 0;
 						frontside = true;
 						singlesectors = true;
@@ -77,12 +77,12 @@ maps
 						applyceilingtexture = false;
 						ceilingtexture = "";
 						applyuppertexture = false;
-						uppertexture = "flats/SUP532BF";
+						uppertexture = "-";
 						upperunpegged = true;
 						applymiddletexture = false;
 						middletexture = "-";
 						applylowertexture = false;
-						lowertexture = "STEP4";
+						lowertexture = "-";
 						lowerunpegged = true;
 					}
 				}
@@ -99,11 +99,11 @@ maps
 			gridrotate = 4.71238899230957;
 			backscalex = 100;
 			gridoriginx = 4032;
-			gridsize = 4;
+			gridsize = 16;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 9.173318f;
+		viewscale = 0.3937364f;
 		defaulttoptexture = "STARGR1";
 		overridebottomtexture = false;
 		useresourcesinreadonlymode = false;
