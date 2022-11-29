@@ -8,7 +8,7 @@ actor FlyingImpPlayer : PlayerPawn
 	Height 56
 	Mass 100
 	PainChance 255
-	player.maxhealth 120
+	player.maxhealth 100
 	player.soundclass "ImpPlayer"
 	player.morphweapon "ImpArm"
 	Player.ColorRange 0, 0

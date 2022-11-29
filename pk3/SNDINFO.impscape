@@ -1,3 +1,8 @@
+//Modificaciones a los sonidos originales
+$limit weapons/plasmaf 4 //Limitados para no crear un errape con los sonidos de plasma
+$limit weapons/plasmax 4
+
+
 //Computadoras
 compy1 "sounds/computer/Compy1.flac"
 compy2 "sounds/computer/Compy2.flac"
@@ -35,6 +40,7 @@ Marine/Active "sounds/ALLYACTV"
 Marine/See1	"sounds/ALLYSITE"
 Marine/See2	"sounds/ALLYACTV"
 Marine/See3	"sounds/ALYBRDY"
+Marine/Charge "sounds/MarineCharging"
 
 //Maquinas
 machine1 "sounds/machine/COMPUTE3"

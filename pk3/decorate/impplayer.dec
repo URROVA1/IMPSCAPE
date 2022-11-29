@@ -118,11 +118,11 @@ actor ImpArm : weapon
 	  //Muy lento (imp normal)
 	  FireVerySlow:
 		IMPD F 5
-		IMPD G 5 A_GunFlash
+		IMPD G 4 A_GunFlash
 		IMPD H 5 A_FireCustomMisSile ("ImpPlayerBall")
-		IMPD I 5
+		IMPD I 4
 		TNT1 A 5 A_ReFire
-		IMPD J 5
+		IMPD J 4
 		Goto Ready
 	  //Lento
 	  FireSlow:

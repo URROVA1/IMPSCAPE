@@ -11,6 +11,13 @@ HardwareShader PostProcess scene {
 
 HardwareShader PostProcess scene {
 	Name "Contrast"
-	Shader "shaders/Contrast.fp" 330
+	Shader "shaders/CONTRAST.fp" 330
 	Uniform float contrast
 }
+
+// Shader de glitch para los sprites de los enemigos de computadora
+/*
+HardwareShader sprite OILDA0{
+	Shader "shaders/GLITCH.fp"
+}
+*/
