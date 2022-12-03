@@ -1,4 +1,5 @@
 #include "zscript/enemies/bosses/UAC_Cyberdemon.zsc"
+#include "zscript/enemies/bosses/FinalBoss.zsc"
 #include "zscript/enemies/computer.zsc"
 #include "zscript/enemies/demons.zsc"
 #include "zscript/enemies/marines.zsc"
