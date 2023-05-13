@@ -1,0 +1,40 @@
+class BossBase : Actor{
+	//Todas las funciones de los diferentes jefes
+	void _CircleBullets (string ProjClass, int step){
+		for (int i = 0; i<360; i+=step){
+			A_SpawnProjectile(ProjClass,32.0,0.0, i, CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
+		}
+	}
+	
+	void _SpreadBullets (string ProjClass, int step, int SpreadAngle, int offset, int angleoffset = 0){
+		for (int i = 0; i < SpreadAngle; i+=step){
+			if (i == 0){
+				A_SpawnProjectile(ProjClass, 32, offset, i + angleoffset, CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
+			}
+			else{
+				A_SpawnProjectile(ProjClass, 32, offset, i + angleoffset, CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
+				A_SpawnProjectile(ProjClass, 32, offset, -i + angleoffset, CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
+			}
+		}
+	}
+	
+	void _CacoWall(int addAngle){
+			A_SpawnProjectile("UACCyber_CacodemonBallButFaster",32.0,0.0,angle+addAngle,CMF_ABSOLUTEPITCH|CMF_ABSOLUTEANGLE,0);
+			A_SpawnProjectile("UACCyber_CacodemonBallButFaster",32.0,0.0,angle+addAngle,CMF_ABSOLUTEPITCH|CMF_ABSOLUTEANGLE,-10);
+			A_SpawnProjectile("UACCyber_CacodemonBallButFaster",32.0,0.0,angle+addAngle,CMF_ABSOLUTEPITCH|CMF_ABSOLUTEANGLE,-20);
+			A_SpawnProjectile("UACCyber_CacodemonBallButFaster",32.0,0.0,angle+addAngle,CMF_ABSOLUTEPITCH|CMF_ABSOLUTEANGLE,-30);
+	}
+
+	void _CacoBarrier(){
+		for (int i = 20; i < 80; i+=20){
+		_CacoWall(i);
+		}
+		for (int i = -20; i > -80; i-=20){
+		_CacoWall(i);
+		}
+	}
+	
+	void _SpawnItemTID(string item, int tid){
+		A_SpawnItemEx(item,0,0,0,0,0,0,angle,0,0,tid);
+	}
+}

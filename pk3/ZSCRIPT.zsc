@@ -12,3 +12,5 @@ En este ZScript pongo includes a los otros archivos en el directiorio ZScript.
 #include "zscript/decorations.zsc"
 #include "zscript/friendlies.zsc"
 #include "zscript/weapons.zsc"
+
+#include "zscript/playerpawns.zsc"
