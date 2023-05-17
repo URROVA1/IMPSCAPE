@@ -4,6 +4,8 @@ TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = "Ice"}
 TNT1 A 0 {bFLOAT = true; bNOGRAVITY = true;}
 */
 
+// Clases del jefe
+
 Class FinalBoss_Base : BossBase{
 	Default{
 		Health 2000;
@@ -64,7 +66,7 @@ class FinalBoss_Phase1 : FinalBoss_Base{
 			APYT A 20 A_FaceTarget();
 			TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = 2;}
 			APYT B 4 A_SkullAttack(30);
-			Skull:
+		Skull:
 			APYT AB 6{
 				for (double i = -15.0; i <= 15.0; i+=10.0){
 					A_SpawnProjectile("DoomImpBall",32,0,90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
@@ -99,21 +101,14 @@ class FinalBoss_Phase2 : FinalBoss_Base{
 			Loop;
 		Missile:
 			APYT A 10 A_FaceTarget();
-			APYT CDCD 4{
-				A_SpawnProjectile("ArachnotronPlasma");
+			APYT C 4{
+				A_SpawnProjectile("FinalBoss_MineProjectile_Shot");
 			}
-			APYT CDCD 4{
-				A_SpawnProjectile("ArachnotronPlasma",32,0,5);
-				A_SpawnProjectile("ArachnotronPlasma",32,0,-5);
-			}
-			APYT CDCD 4{
-				A_SpawnProjectile("ArachnotronPlasma",32,0,10);
-				A_SpawnProjectile("ArachnotronPlasma",32,0,-10);
-			}
+			APYT D 4 A_Jump(220, "See"); //La mayoria de las veces solo sigue disparando. A veces skull
 			APYT A 20 A_FaceTarget();
 			TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = 2;}
 			APYT B 4 A_SkullAttack(30);
-			Skull:
+		Skull:
 			APYT AB 6{
 				for (double i = -15.0; i <= 15.0; i+=10.0){
 					A_SpawnProjectile("DoomImpBall",32,0,90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
@@ -133,5 +128,59 @@ class FinalBoss_Phase2 : FinalBoss_Base{
 			APYT H 6 A_Fall();
 			APYT IJ 6;
 			Stop;
+	}
+}
+
+// ===== BALAS =====
+class FinalBoss_MineProjectile_Shot : Actor{
+	default{
+		PROJECTILE;
+		Radius 16;
+		Height 16;
+		Speed 20;
+		FastSpeed 40;
+		Damage 10;
+	}
+	
+	States{
+		Spawn:
+			BFS1 ABAB 4 BRIGHT;
+			TNT1 A 0 {
+				A_SpawnItem("FinalBoss_MineProjectile_Mine");
+			}
+			Goto Crash;
+			Loop;
+		Crash:
+			BFE1 CDE 6 BRIGHT;
+			Stop;
+	}
+}
+
+class FinalBoss_MineProjectile_Mine : Actor{
+	default{
+		Radius 16;
+		Height 16;
+		Speed 20;
+		FastSpeed 40;
+		Damage 10;
+	}
+	
+	States{
+		Spawn:
+			BFS1 ABABABABABABABABABABABAB 4 BRIGHT;
+			BFE1 C 6 BRIGHT{
+				for (int i = 0; i<360; i+=120){
+					A_SpawnProjectile("FinalBoss_DoomImpBall_Slow",32.0,0.0, i+random(0, 360), CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
+				}
+			}
+			BFE1 DE 6 BRIGHT;
+			TNT1 A 0;
+			stop;
+	}
+}
+
+class FinalBoss_DoomImpBall_Slow : DoomImpBall{
+	default{
+		Speed 2;
 	}
 }

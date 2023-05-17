@@ -1,1 +1,3 @@
 #include "zscript/playerpawns/impplayer.zsc"
+#include "zscript/playerpawns/darkimpplayer.zsc"
+#include "zscript/playerpawns/flyingimpplayer.zsc"

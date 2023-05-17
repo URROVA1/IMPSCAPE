@@ -13,19 +13,16 @@ Es un pk3 que va a tener 8 mapas.
 - **MAP04:** Ahora mismo repensando el combate, para hacerlo mas dificil que MAP03.
 - **MAP05:** No lo empece
 - **MAP06:** No lo empece
-- **MAP07:** No lo empece
-- **MAP08:** No lo empece
 
 ## Estado de los temas (musica):
 
 - **MAP01:** No lo empece.
 - **MAP02:** No lo empece.
-- **MAP03:** Terminado: Ignis Machina
+- **MAP03:** Terminado: Ignis Machina (D_IGNIS)
 - **MAP04:** No lo empece.
-- **MAP05:** Terminado: Robotic Invasion
-- **MAP06:** Terminado: Mirrored Mars
-- **MAP07:** Terminado: Agujero Gusano
-- **MAP08:** No lo empece.
-- **Jefe:** Terminado: Muerte por Danmaku
-- **Autodestruccion:** Terminado: Estabilidad de C4
-- **Jefe final:** No lo empece.
+- **MAP05:** Terminado: Agujero Gusano (D_GUSANO)
+- **MAP06:** Terminado: Mirrored Mars (D_MARS)
+- **Jefe:** Terminado: Muerte por Danmaku (D_BOSS)
+- **Autodestruccion:** Terminado: Estabilidad de C4 (D_C4)
+- **Jefe final:** Terminado: D_FBOSS
+- **Menu de juego:** Terminado: (D_INTRO)

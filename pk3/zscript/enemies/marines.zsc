@@ -3,7 +3,7 @@ class ShotgunMarineEnemy : MarineShotgun{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -60,7 +60,7 @@ class PistolMarineEnemy : MarinePistol{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -120,7 +120,7 @@ class FistMarineEnemy : MarineFist{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
@@ -181,7 +181,7 @@ class ChaingunMarineEnemy : MarineChaingun{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -241,7 +241,7 @@ class RocketMarineEnemy : MarineRocket{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -299,7 +299,7 @@ class PlasmaMarineEnemy : MarinePlasma{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -367,7 +367,7 @@ class SubPlasmaMarineEnemy : MarinePlasma{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -429,7 +429,7 @@ class PlasmaShotgunMarineEnemy : MarinePlasma{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -498,7 +498,7 @@ class BFGMarineEnemy : MarineBFG{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
@@ -559,7 +559,7 @@ class ChainsawMarineEnemy : MarineChainsaw{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		Speed 9;
 		Monster;
 		+COUNTKILL;
@@ -621,7 +621,7 @@ class SShotgunMarineEnemy : MarineSSG{
 	//$Category "Enemies/Enemy Marines"
 	//$Angled
 	Default{
-		Health 70;
+		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
 		Monster;
