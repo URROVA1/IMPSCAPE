@@ -51,7 +51,10 @@ class FinalBoss_Phase1 : FinalBoss_Base{
 			APYT AABBAABBAABB 2 A_Chase();
 			Loop;
 		Missile:
-			APYT A 10 A_FaceTarget();
+			APYT A 15 {
+				A_StartSound("Marine/Charge", CHAN_WEAPON);
+				A_FaceTarget();
+			}
 			APYT CDCD 4{
 				A_SpawnProjectile("ArachnotronPlasma");
 			}
@@ -89,7 +92,8 @@ class FinalBoss_Phase1 : FinalBoss_Base{
 class FinalBoss_Phase2 : FinalBoss_Base{
 	default{
 		Damage 10;
-		Health 1000;
+		Health 2100;
+		Translation 2;
 	}
 	States{
 		Spawn:
@@ -100,11 +104,78 @@ class FinalBoss_Phase2 : FinalBoss_Base{
 			APYT AABBAABBAABB 2 A_Chase();
 			Loop;
 		Missile:
-			APYT A 10 A_FaceTarget();
+			APYT A 15 {
+				A_StartSound("Marine/Charge", CHAN_WEAPON);
+				A_FaceTarget();
+			}
 			APYT C 4{
-				A_SpawnProjectile("FinalBoss_MineProjectile_Shot");
+				A_SpawnProjectile("FinalBoss_MineProjectile_Shot", 32, 0, 0, CMF_ABSOLUTEPITCH);
 			}
 			APYT D 4 A_Jump(220, "See"); //La mayoria de las veces solo sigue disparando. A veces skull
+			APYT A 20 A_FaceTarget();
+			TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = 2;}
+			APYT B 4 A_SkullAttack(30);
+		Skull:
+			APYT AB 6{
+				for (double i = -15.0; i <= 15.0; i+=10.0){
+					A_SpawnProjectile("SmallSilentExplosionFX",32,0,90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
+					A_SpawnProjectile("SmallSilentExplosionFX",32,0,-90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
+				}
+			}
+			Goto Skull;
+		Pain:
+			APYT A 1 A_Pain();
+			Goto See;
+		Death:
+			TNT1 A 0 {
+				bFLOAT = true; bNOGRAVITY = true;
+			}
+			APYT BBB 0 A_SpawnProjectile("GravityExplosionFire",32.0,0.0,random(0,359),CMF_ABSOLUTEPITCH,random(0,-60));
+			APYT BBBBBBBBB 3 A_SpawnProjectile("ExplosionFX",random(0,128),random(-32,32),random(0,359),0);
+			TNT1 A 0 A_SpawnItem("TeleportFog");
+			Stop;
+	}
+}
+
+class FinalBoss_Phase3 : FinalBoss_Base{
+	default{
+		Damage 10;
+		Health 2500;
+	}
+	
+	States{
+		Spawn:
+			APYT ABABAB 4 A_Look();
+			Loop;
+		See:
+			TNT1 A 0 {bINVULNERABLE = false; TRANSLATION = -1;}
+			APYT AABBAABBAABB 2 A_Chase();
+			Loop;
+		Missile:
+			APYT A 15 {
+				A_StartSound("Marine/Charge", CHAN_WEAPON);
+				A_FaceTarget();
+			}
+			
+			APYT CC 5{
+				A_BrainSpit("FinalBoss_SpawnShot");
+			}
+		
+			APYT A 15 {
+				A_StartSound("Marine/Charge", CHAN_WEAPON);
+				A_FaceTarget();
+			}
+			APYT CDCD 4{
+				A_SpawnProjectile("ArachnotronPlasma");
+			}
+			APYT CDCD 4{
+				A_SpawnProjectile("ArachnotronPlasma",32,0,5);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-5);
+			}
+			APYT CDCD 4{
+				A_SpawnProjectile("ArachnotronPlasma",32,0,10);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-10);
+			}
 			APYT A 20 A_FaceTarget();
 			TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = 2;}
 			APYT B 4 A_SkullAttack(30);
@@ -120,6 +191,17 @@ class FinalBoss_Phase2 : FinalBoss_Base{
 			APYT A 1 A_Pain();
 			Goto See;
 		Death:
+			TNT1 A 0 {bFLOAT = true; bNOGRAVITY = true;}
+			APYT BBB 0 A_SpawnProjectile("GravityExplosionFire",32.0,0.0,random(0,359),CMF_ABSOLUTEPITCH,random(0,-60));
+			APYT BBBBBBBBB 3 A_SpawnProjectile("ExplosionFX",random(0,128),random(-32,32),random(0,359),0);
+			TNT1 A 0 A_SpawnItem("TeleportFog");
+			Stop;
+	}
+}
+
+////////MUERTE DEL JEFE FINAL/////
+/*
+		Death:
 			APYT A 0 A_PlaySound("spider/death");
 			APYT A 4 A_Scream();
 			APYT B 4;
@@ -128,8 +210,7 @@ class FinalBoss_Phase2 : FinalBoss_Base{
 			APYT H 6 A_Fall();
 			APYT IJ 6;
 			Stop;
-	}
-}
+*/
 
 // ===== BALAS =====
 class FinalBoss_MineProjectile_Shot : Actor{
@@ -140,15 +221,17 @@ class FinalBoss_MineProjectile_Shot : Actor{
 		Speed 20;
 		FastSpeed 40;
 		Damage 10;
+		Translation 2;
 	}
 	
 	States{
 		Spawn:
-			BFS1 ABAB 4 BRIGHT;
+			BFS1 ABAB 4 BRIGHT{
+				A_SpawnItem("ExplosionFX");
+			}
 			TNT1 A 0 {
 				A_SpawnItem("FinalBoss_MineProjectile_Mine");
 			}
-			Goto Crash;
 			Loop;
 		Crash:
 			BFE1 CDE 6 BRIGHT;
@@ -167,7 +250,7 @@ class FinalBoss_MineProjectile_Mine : Actor{
 	
 	States{
 		Spawn:
-			BFS1 ABABABABABABABABABABABAB 4 BRIGHT;
+			BFS1 ABABABABABABABABABABAB 4 BRIGHT;
 			BFE1 C 6 BRIGHT{
 				for (int i = 0; i<360; i+=120){
 					A_SpawnProjectile("FinalBoss_DoomImpBall_Slow",32.0,0.0, i+random(0, 360), CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION);
@@ -179,8 +262,43 @@ class FinalBoss_MineProjectile_Mine : Actor{
 	}
 }
 
-class FinalBoss_DoomImpBall_Slow : DoomImpBall{
+class FinalBoss_DoomImpBall_Slow : ArachnotronPlasma{
 	default{
-		Speed 2;
+		Speed 3;
+	}
+}
+
+class FinalBoss_SpawnShot : Actor{
+	Default{
+		Radius 6;
+		Height 32;
+		Speed 10;
+		Damage 3;
+		Projectile;
+		+NOCLIP
+		-ACTIVATEPCROSS
+		+RANDOMIZE
+		SeeSound "brain/spit";
+		DeathSound "brain/cubeboom";
+		Translation 2;
+		
+		//Los pongo aca porque si el jefe muere la bala se olvida y spawnea monstruos normales.
+		DropItem "ControlledImp";
+		DropItem "ControlledCacodemon";
+		DropItem "ControlledArachnotron";
+		DropItem "ControlledFatso";
+		DropItem "ControlledHellKnight";
+		DropItem "ControlledLostSoul";
+	}
+
+
+	States{
+		Spawn:
+			BFS1 A 3 BRIGHT A_SpawnSound;
+			BFS1 B 3 BRIGHT {
+			A_SpawnFly();
+			A_SpawnItem("ExplosionFX");
+			}
+			Loop;
 	}
 }
