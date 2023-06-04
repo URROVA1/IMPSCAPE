@@ -15,6 +15,7 @@ class UACCyber_Base : BossBase{
 		+BOSS;
 		+MISSILEEVENMORE;
 		+DONTTHRUST;
+		+NOTELEFRAG;
 		SeeSound "cyber/sight";
 		
 		OBITUARY "%o was exploded by the UAC Cyberdemon.";
@@ -39,11 +40,11 @@ class UACCyber_Phase1 : UACCyber_Base{
 		Missile:
 			ANNI E 6 A_FaceTarget();
 			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
-			ANNI E 6;
+			ANNI E 6 A_FaceTarget();
 			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
-			ANNI E 6;
+			ANNI E 6 A_FaceTarget();
 			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
-			ANNI E 6;
+			ANNI E 6 A_FaceTarget();
 			/*
 			ANNI F 5 Bright _CircleBullets("UACCyber_AngularVelocityBullet_Right", 25);
 			ANNI E 5;
@@ -153,14 +154,31 @@ class UACCyber_Phase3 : UACCyber_Base{
 			ANNI F 10 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,180,CMF_ABSOLUTEPITCH,0);
 			ANNI E 35 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,270,CMF_ABSOLUTEPITCH,0);
 			ANNI E 5 A_FaceTarget;
-			ANNI FF 15 A_SpawnProjectile("Rocket",8,0,0,CMF_ABSOLUTEPITCH,0);
-			ANNI FF 15 {
-				A_SpawnProjectile("Rocket",8,0,20,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Rocket",8,0,-20,CMF_ABSOLUTEPITCH,0);
+			//ANNI FFFFFF 3 A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+			/*
+			ANNI FFFFFF 3 {
+				A_SpawnProjectile("Plasmaball",24,0,5,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-5,CMF_ABSOLUTEPITCH,0);
+				
+				A_SpawnProjectile("Plasmaball",24,0,10,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-10,CMF_ABSOLUTEPITCH,0);
+				
+				A_SpawnProjectile("Plasmaball",24,0,15,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-15,CMF_ABSOLUTEPITCH,0);
 			}
-			ANNI FF 15 {
-				A_SpawnProjectile("Rocket",8,0,30,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Rocket",8,0,-30,CMF_ABSOLUTEPITCH,0);
+			*/
+			ANNI FFFFFFFFFFFFFFFFFF 3 {
+				A_FaceTarget();
+				A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+			
+				A_SpawnProjectile("Plasmaball",24,0,10,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-10,CMF_ABSOLUTEPITCH,0);
+				
+				A_SpawnProjectile("Plasmaball",24,0,20,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-20,CMF_ABSOLUTEPITCH,0);
+				
+				A_SpawnProjectile("Plasmaball",24,0,30,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("Plasmaball",24,0,-30,CMF_ABSOLUTEPITCH,0);
 			}
 			loop;
 		Death:
@@ -231,6 +249,7 @@ class UACCyber_Phase4 : UACCyber_Base{
 			ANNI EEE 5 A_SpawnProjectile("ExplosionFX",random(0,128),random(-32,32),random(0,359),0);
 			ANNI E 0 {
 				A_SpawnItem("GiantExplosionFX");
+				A_RadiusThrust(512,2048);
 				ACS_NamedExecute("BossDeath");
 			}
 			ANNI EEEEEEEEEE 0 A_SpawnProjectile("GravityExplosionFire",32.0,0.0,random(0,359),CMF_ABSOLUTEPITCH,random(0,-60));

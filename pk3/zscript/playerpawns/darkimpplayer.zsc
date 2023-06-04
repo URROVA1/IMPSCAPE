@@ -88,11 +88,13 @@ class DarkImpArm : weapon{
 		weapon.SlotNumber 1;
 	}
 	
-	action void _A_JumpIfNotHold(){
-		int buttons = GetPlayerInput(-1);
-		if (!buttons & BT_ALTATTACK){
-			A_Jump(255, "AltShoot");
+	//Va hacia al estado de ataque si el jugador deja de presionar AltFire
+	action state _A_JumpIfNotHold(){
+		int buttons = GetPlayerInput(INPUT_BUTTONS);
+		if (!(buttons & BT_ALTATTACK)){
+			return ResolveState("AltShoot");
 		}
+		return ResolveState(null);
 	}
 
 	States{
@@ -174,6 +176,7 @@ class DarkImpArm : weapon{
 		AltFire:
 			DIMD F 5;
 		AltHold:
+			DIMD A 0 A_JumpIfInventory("AltFireEnergy",6,"AltFireCharged");
 			DIMD A 0 A_JumpIfInventory("FirePowerUp",4,"AltVeryFast");
 			DIMD A 0 A_JumpIfInventory("FirePowerUp",3,"AltFast");
 			DIMD A 0 A_JumpIfInventory("FirePowerUp",2,"AltMid");
@@ -181,20 +184,26 @@ class DarkImpArm : weapon{
 			DIMD A 0 A_JumpIfInventory("FirePowerUp",0,"AltVerySlow");
 		//Se van sumando los tics y haciendo mas lenta la carga.
 		AltVerySlow:
-			DIMD F 2 {_A_JumpIfNotHold();}
-			DIMD F 2 {_A_JumpIfNotHold();}
+			DIMD F 2 _A_JumpIfNotHold();
+			DIMD F 2 _A_JumpIfNotHold();
 		AltSlow:
-			DIMD F 2 {_A_JumpIfNotHold();}
-			DIMD F 2 {_A_JumpIfNotHold();}
+			DIMD F 2 _A_JumpIfNotHold();
+			DIMD F 2 _A_JumpIfNotHold();
 		AltMid:
-			DIMD F 2 {_A_JumpIfNotHold();}
-			DIMD F 2 {_A_JumpIfNotHold();}
+			DIMD F 2 _A_JumpIfNotHold();
+			DIMD F 2 _A_JumpIfNotHold();
 		AltFast:
-			DIMD F 2 {_A_JumpIfNotHold();}
-			DIMD F 2 {_A_JumpIfNotHold();}
+			DIMD F 2 _A_JumpIfNotHold();
+			DIMD F 2 _A_JumpIfNotHold();
 		AltVeryFast:
-			DIMD F 2 {_A_JumpIfNotHold();}
-			DIMD G 2 A_GiveInventory("AltFireEnergy", 1);
+			DIMD F 2 _A_JumpIfNotHold();
+			DIMD G 2 {
+				A_StopSound(CHAN_WEAPON);
+				A_StartSound("ImpCharging", CHAN_WEAPON);
+				A_GiveInventory("AltFireEnergy", 1);
+			}
+		AltFireCharged:
+			DIMD F 1;
 			DIMD G 1 A_ReFire;
 		AltShoot:
 			DIMD G 1 A_GunFlash;

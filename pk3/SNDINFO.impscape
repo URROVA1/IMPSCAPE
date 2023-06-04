@@ -2,6 +2,8 @@
 $limit weapons/plasmaf 4 //Limitados para no crear un errape con los sonidos de plasma
 $limit weapons/plasmax 4
 
+//Carga de AltFire
+ImpCharging "sounds/ImpCharging"
 
 //Computadoras
 compy1 "sounds/computer/Compy1.flac"
