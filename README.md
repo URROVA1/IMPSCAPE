@@ -1,6 +1,6 @@
 # Bienvenido al repositorio de IMPSCAPE.
 
-**IMPSCAPE** es un mod para GZDoom que estoy desarrollando, en donde sos un imp capturado por la UAC, para hacer expermientos de control demoniaco. Tenes que escapar de la misma base de la UAC.
+**IMPSCAPE** es un mod de DOOM II para GZDoom, en donde sos un imp capturado por la UAC, para hacer expermientos de control demoniaco. Tenes que escapar de la misma base de la UAC.
 Es un pk3 que va a tener 6 mapas.
 
 
@@ -30,7 +30,7 @@ Es un pk3 que va a tener 6 mapas.
 -------------------------------------------------------------------------------------------------
 # Welcome to IMPSCAPE repository.
 
-**IMPSCAPE** is a GZDoom mod im developing, where you are an imp captured by the UAC, to make demon control experiments. You have to escape the same UAC base.
+**IMPSCAPE** is a DOOM II mod for GZDoom, where you are an imp captured by the UAC, to make demon control experiments. You have to escape the same UAC base.
 Its a pk3 that will have 6 maps.
 
 
