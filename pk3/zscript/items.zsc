@@ -68,3 +68,18 @@ class FlyingImpTransform : PowerMorph{
 		Powerup.duration 0x7FFFFFFF;
 	}
 }
+
+//Llave para el nivel secreto
+class BossKey : Inventory{
+	default{
+		inventory.amount 1;
+		inventory.maxamount 5;
+		inventory.pickupmessage "You grabbed a misterious keycard . . .";
+		+COUNTITEM;
+	}
+	states{
+		Spawn:
+			BKKY AB 4 Bright;
+			loop;
+	}
+}

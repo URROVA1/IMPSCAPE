@@ -16,6 +16,7 @@ DoomEdNums{
   11001 = DarkImpOrb
   11002 = FlyingImpOrb
   11003 = RandomExperimentalWeapon
+  11004 = BossKey
 //Marines
   12000 = ShotgunMarineEnemy
   12001 = PistolMarineEnemy
