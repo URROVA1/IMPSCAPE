@@ -49,8 +49,8 @@ map MAP04 "Abandoned Computer Station"{
 	Sky1 = "TEKWALL4"
 }
 
-map MAP05 "The Installament Exteriors"{
-	music = "D_TKWALL"
+map MAP05 "UAC Bridge Dimension"{
+	music = "D_GUSANO"
 	next = "MAP07"
 	LevelNum = 5
 }
