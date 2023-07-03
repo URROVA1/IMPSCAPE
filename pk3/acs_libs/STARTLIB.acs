@@ -21,7 +21,7 @@ script "Init" ENTER{
 	}
 	
 	ACS_NamedExecute("FlyControl",0);
-	ACS_NamedExecute("EnterMSG",0);
+	//ACS_NamedExecute("EnterMSG",0);
 }
 
 //Script que controla si sos un flyimp, y si sos te da la habilidad de volar.
