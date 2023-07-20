@@ -1,6 +1,6 @@
 class ControlledImp : DoomImp{
 	//$Title "Controlled Imp"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -10,15 +10,15 @@ class ControlledImp : DoomImp{
 		Melee:
 		Missile:
 			TROO EF 8 A_FaceTarget;
-			TROO G 0 A_TroopAttack;
-			TROO G 6 A_SpawnProjectile("DoomImpBall",32.0,0,random(-15,15));
+			//TROO G 0 A_SpawnProjectile("DoomImpBall",32.0,0,random(-15,15)); 
+			TROO G 6 A_TroopAttack;
 			Goto See;
 	}
 }
 
 class ControlledPinky : Demon{
 	//$Title "Controlled Pinky Demon"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -28,7 +28,7 @@ class ControlledPinky : Demon{
 
 class ControlledHellKnight : HellKnight{
 	//$Title "Controlled Hell Knight"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -38,7 +38,7 @@ class ControlledHellKnight : HellKnight{
 
 class ControlledBaronOfHell : BaronOfHell{
 	//$Title "Controlled Baron of Hell"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -48,7 +48,7 @@ class ControlledBaronOfHell : BaronOfHell{
 
 class ControlledLostSoul : LostSoul{
 	//$Title "Controlled Lost Soul"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -58,7 +58,7 @@ class ControlledLostSoul : LostSoul{
 
 class ControlledArachnotron : Arachnotron{
 	//$Title "Controlled Arachnotron"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -68,7 +68,7 @@ class ControlledArachnotron : Arachnotron{
 
 class ControlledArchvile : Archvile{
 	//$Title "Controlled Archvile"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -78,7 +78,7 @@ class ControlledArchvile : Archvile{
 
 class ControlledCacodemon : Cacodemon{
 	//$Title "Controlled Cacodemon"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -88,7 +88,7 @@ class ControlledCacodemon : Cacodemon{
 
 class ControlledCyberdemon : Cyberdemon{
 	//$Title "Controlled Cyberdemon"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -98,7 +98,7 @@ class ControlledCyberdemon : Cyberdemon{
 
 class ControlledFatso : Fatso{
 	//$Title "Controlled Fatso"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -108,7 +108,7 @@ class ControlledFatso : Fatso{
 
 class ControlledPainElemental : PainElemental{
 	//$Title "Controlled PainElemental"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -133,7 +133,7 @@ class ControlledPainElemental : PainElemental{
 
 class ControlledRevenant : Revenant{
 	//$Title "Controlled Revenant"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";
@@ -143,7 +143,7 @@ class ControlledRevenant : Revenant{
 
 class ControlledSpiderMastermind : SpiderMastermind{
 	//$Title "Controlled Spider Mastermind"
-	//$Category "Enemies/Controlled Monsters"
+	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
 		Translation "Ice";

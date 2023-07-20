@@ -53,6 +53,7 @@ map MAP05 "UAC Bridge Dimension"{
 	music = "D_GUSANO"
 	next = "MAP07"
 	LevelNum = 5
+	Sky1 = "HUBSKY"
 }
 
 map MAP06 "HUB"{

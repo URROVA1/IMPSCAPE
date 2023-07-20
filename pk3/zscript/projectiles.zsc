@@ -42,3 +42,22 @@ class DarkFast : Actor{
     Stop;
   }
 }
+
+class LostSoulProjectile : CacodemonBall{
+	default{
+		RenderStyle "SoulTrans";
+	}
+	states{
+		Spawn:
+			SKUL CD 4 BRIGHT;
+			Loop;
+		Death:
+			SKUL F 6 BRIGHT;
+			SKUL G 6 BRIGHT;
+			SKUL H 6 BRIGHT;
+			SKUL I 6 BRIGHT;
+			SKUL J 6;
+			SKUL K 6;
+			Stop;
+	}
+}

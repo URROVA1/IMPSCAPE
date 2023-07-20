@@ -1,8 +1,8 @@
 class ShotgunMarineEnemy : MarineShotgun{
-	//$Title "Shotgun Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Shotgun Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
@@ -56,10 +56,10 @@ class ShotgunMarineEnemy : MarineShotgun{
 }
 
 class PistolMarineEnemy : MarinePistol{
-	//$Title "Pistol Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Pistol Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
@@ -117,10 +117,10 @@ class PistolMarineEnemy : MarinePistol{
 }
 
 class FistMarineEnemy : MarineFist{
-	//$Title "Fist Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Fist Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 13;
 		SeeSound "Marine/Site";
@@ -178,10 +178,10 @@ class FistMarineEnemy : MarineFist{
 }
 
 class ChaingunMarineEnemy : MarineChaingun{
-	//$Title "Chaingun Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Chaingun Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
@@ -239,10 +239,10 @@ class ChaingunMarineEnemy : MarineChaingun{
 }
 
 class RocketMarineEnemy : MarineRocket{
-	//$Title "Rocket Launcher Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Rocket Launcher Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
@@ -297,10 +297,10 @@ class RocketMarineEnemy : MarineRocket{
 }
 
 class PlasmaMarineEnemy : MarinePlasma{
-	//$Title "Plasma Rifle Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Plasma Rifle Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
@@ -366,10 +366,10 @@ class PlasmaMarineEnemy : MarinePlasma{
 //Una version menos poderosa del marin con el rifle de plasma
 //Y para que sea mas variado tira tiros de aracnhotron
 class SubPlasmaMarineEnemy : MarinePlasma{
-	//$Title "Sub Plasma Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Sub Plasma Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
@@ -435,10 +435,10 @@ class SubPlasmaMarineEnemy : MarinePlasma{
 // Marin armado con la escopeta de plasma
 // (Un spread de balas de plasma)
 class PlasmaShotgunMarineEnemy : MarinePlasma{
-	//$Title "Plasma Shotgun Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Plasma Shotgun Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";
@@ -505,10 +505,10 @@ class PlasmaShotgunMarineEnemy : MarinePlasma{
 }
 
 class BFGMarineEnemy : MarineBFG{
-	//$Title "BFG9000 Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "BFG9000 Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		SeeSound "Marine/Site";
 		ActiveSound "Marine/Active";
@@ -566,10 +566,10 @@ class BFGMarineEnemy : MarineBFG{
 }
 
 class ChainsawMarineEnemy : MarineChainsaw{
-	//$Title "Chainsaw Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Chainsaw Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 16;
 		Monster;
@@ -628,10 +628,10 @@ class ChainsawMarineEnemy : MarineChainsaw{
 }
 
 class SShotgunMarineEnemy : MarineSSG{
-	//$Title "Supershotgun Enemy Marine"
-	//$Category "Enemies/Enemy Marines"
-	//$Angled
 	Default{
+		//$Title "Supershotgun Enemy Marine"
+		//$Category "Monsters/Enemy Marines"
+		//$Angled
 		Health 80;
 		Speed 8;
 		SeeSound "Marine/Site";

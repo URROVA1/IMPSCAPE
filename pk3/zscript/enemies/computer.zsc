@@ -1,5 +1,8 @@
 class Pixel : Actor{
 	default{
+		//$Title "Pixel"
+		//$Category "Monsters/Computer"
+		//$Angled
 		Health 200;
 		radius 32;
 		height 64;
@@ -74,6 +77,9 @@ class Pixel : Actor{
 
 class DarkPixel : Actor{
 	default{
+		//$Title "Dark Pixel"
+		//$Category "Monsters/Computer"
+		//$Angled
 		Health 325;
 		radius 32;
 		height 64;

@@ -1,5 +1,8 @@
 Class RocketTurret : Actor{ //Enemigo
 	default{
+		//$Title "Rocket Turret"
+		//$Category "Monsters/Turrets"
+		//$Angled
 		Radius 20;
 		Height 24;
 		Speed 0;
@@ -82,6 +85,9 @@ Class DeathExplosionSmaller : Actor{ //FX
 ///////////////////////SENTRY TURRET////////////////////////////////////////////
 Class SentryGun : Actor{ //Enemigo
 	default{
+		//$Title "Sentry Gun"
+		//$Category "Monsters/Turrets"
+		//$Angled
 		obituary "%o was ventilated by an auto-sentry.";
 		health 200;
 		radius 20;
