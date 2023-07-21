@@ -22,7 +22,7 @@ map TESTROOM "Fuck You So"{
 	LevelNum = 99
 }
 
-map MAP01 "Demon storage (prison) D"{
+map MAP01 "Demon contaiment D"{
 	music = "D_IN_CIT"
 	next = "MAP02"
 	LevelNum = 1

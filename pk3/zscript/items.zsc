@@ -83,3 +83,22 @@ class BossKey : Inventory{
 			loop;
 	}
 }
+
+//Para los lenguajes en los dialogos de strife
+class Language_English : Inventory{
+	default{
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+inventory.UNDROPPABLE;
+		+inventory.UNTOSSABLE;
+	}
+}
+
+class Language_Spanish : Inventory{
+	default{
+		inventory.amount 1;
+		inventory.maxamount 1;
+		+inventory.UNDROPPABLE;
+		+inventory.UNTOSSABLE;
+	}
+}
