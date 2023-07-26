@@ -3,7 +3,7 @@ class ControlledImp : DoomImp{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cimp";
 		bloodcolor "00 FF 00";
 	}
 	states{
@@ -21,7 +21,7 @@ class ControlledPinky : Demon{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cdemon";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -31,7 +31,7 @@ class ControlledHellKnight : HellKnight{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cknight";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -41,7 +41,7 @@ class ControlledBaronOfHell : BaronOfHell{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cbaron";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -51,7 +51,7 @@ class ControlledLostSoul : LostSoul{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_clostsoul";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -61,7 +61,7 @@ class ControlledArachnotron : Arachnotron{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_carachnotron";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -71,7 +71,7 @@ class ControlledArchvile : Archvile{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_carchvile";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -81,7 +81,7 @@ class ControlledCacodemon : Cacodemon{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_ccacodemon";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -91,7 +91,7 @@ class ControlledCyberdemon : Cyberdemon{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_ccyberdemon";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -101,7 +101,7 @@ class ControlledFatso : Fatso{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cfatso";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -111,7 +111,7 @@ class ControlledPainElemental : PainElemental{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cpainelemental";
 		bloodcolor "00 FF 00";
 	}
 	states{
@@ -136,7 +136,7 @@ class ControlledRevenant : Revenant{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_crevenant";
 		bloodcolor "00 FF 00";
 	}
 }
@@ -146,7 +146,7 @@ class ControlledSpiderMastermind : SpiderMastermind{
 	//$Category "Monsters/Controlled Monsters"
 	//$Angled
 	default{
-		Translation "Ice";
+		Translation "tr_cspidermastermind";
 		bloodcolor "00 FF 00";
 	}
 
@@ -161,7 +161,7 @@ class TeleportingShootingCacodemon : Actor{
 		Mass 400;
 		Speed 8;
 		
-		Translation "Ice";
+		Translation "tr_ccacodemon";
 		bloodcolor "00 FF 00";
 		
 		//Monster;
@@ -190,7 +190,7 @@ class TeleportingShootingPainElemental : Actor{
 		Mass 400;
 		Speed 8;
 		
-		Translation "Ice";
+		Translation "tr_cpainelemental";
 		bloodcolor "00 FF 00";
 		
 		//Monster;

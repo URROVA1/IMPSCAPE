@@ -7,7 +7,7 @@ class UACCyber_Base : BossBase{
 		Mass 1000000;
 		Speed 16;
 		PainChance 0;
-		Translation "Ice";
+		Translation "tr_ccyberdemon";
 		MONSTER;
 		+NOTARGET;
 		+FLOORCLIP;
