@@ -94,6 +94,8 @@ DoomEdNums{
   8287 = YellowUACPainter
   8288 = BlueUACPainter
   8289 = RunningImp
+  8290 = HelicopterUAC
+  8291 = ForkliftYellow
   //Torretas
   8274 = RocketTurret
   8275 = SentryGun

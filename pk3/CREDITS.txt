@@ -20,6 +20,7 @@ Post your doom textures DW thread{
 	Gez
 	DooMAD
 	Cacodemon187
+	CherryMvffins
 }
 
 === Realm667 resource wads used | Recursos de realm667 usados ===
@@ -46,7 +47,8 @@ LaserCannon.wad
 === Sonidos | Sounds ===
 DSPLASMA from Doom 64 / PSX Doom
 
-
+=== Voxeles | Voxels ===
+Voxel Vehicles Pack 1.0 (vvpck1.0.PK3) by NerdKoopa
 
 
 

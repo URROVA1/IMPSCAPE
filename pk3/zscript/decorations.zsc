@@ -1,6 +1,7 @@
 #include "zscript/decorations/barrels/ExplosiveBarrel.zsc"
 #include "zscript/decorations/barrels/OilDrum.zsc"
 #include "zscript/decorations/GlassTechPillars.zsc"
+#include "zscript/decorations/VoxelVehicles.zsc"
 
 class Chair : Actor{
 	default{

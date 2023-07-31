@@ -17,6 +17,7 @@ brightmap texture COMPSTA2{
 }
 
 //OCOMP***
+//0
 brightmap texture OCOMPA01{
 	map "brightmaps/ocomp/OCOMPAX1"
 }
@@ -39,6 +40,84 @@ brightmap texture OCOMPA07{
 	map "brightmaps/ocomp/OCOMPAX7"
 }
 brightmap texture OCOMPA08{
+	map "brightmaps/ocomp/OCOMPAX8"
+}
+
+//1
+brightmap texture OCOMPA11{
+	map "brightmaps/ocomp/OCOMPAX1"
+}
+brightmap texture OCOMPA12{
+	map "brightmaps/ocomp/OCOMPAX2"
+}
+brightmap texture OCOMPA13{
+	map "brightmaps/ocomp/OCOMPAX3"
+}
+brightmap texture OCOMPA14{
+	map "brightmaps/ocomp/OCOMPAX4"
+}
+brightmap texture OCOMPA15{
+	map "brightmaps/ocomp/OCOMPAX5"
+}
+brightmap texture OCOMPA16{
+	map "brightmaps/ocomp/OCOMPAX6"
+}
+brightmap texture OCOMPA17{
+	map "brightmaps/ocomp/OCOMPAX7"
+}
+brightmap texture OCOMPA18{
+	map "brightmaps/ocomp/OCOMPAX8"
+}
+
+//2
+brightmap texture OCOMPA21{
+	map "brightmaps/ocomp/OCOMPAX1"
+}
+brightmap texture OCOMPA22{
+	map "brightmaps/ocomp/OCOMPAX2"
+}
+brightmap texture OCOMPA23{
+	map "brightmaps/ocomp/OCOMPAX3"
+}
+brightmap texture OCOMPA24{
+	map "brightmaps/ocomp/OCOMPAX4"
+}
+brightmap texture OCOMPA25{
+	map "brightmaps/ocomp/OCOMPAX5"
+}
+brightmap texture OCOMPA26{
+	map "brightmaps/ocomp/OCOMPAX6"
+}
+brightmap texture OCOMPA27{
+	map "brightmaps/ocomp/OCOMPAX7"
+}
+brightmap texture OCOMPA28{
+	map "brightmaps/ocomp/OCOMPAX8"
+}
+
+//3
+brightmap texture OCOMPA31{
+	map "brightmaps/ocomp/OCOMPAX1"
+}
+brightmap texture OCOMPA32{
+	map "brightmaps/ocomp/OCOMPAX2"
+}
+brightmap texture OCOMPA33{
+	map "brightmaps/ocomp/OCOMPAX3"
+}
+brightmap texture OCOMPA34{
+	map "brightmaps/ocomp/OCOMPAX4"
+}
+brightmap texture OCOMPA35{
+	map "brightmaps/ocomp/OCOMPAX5"
+}
+brightmap texture OCOMPA36{
+	map "brightmaps/ocomp/OCOMPAX6"
+}
+brightmap texture OCOMPA37{
+	map "brightmaps/ocomp/OCOMPAX7"
+}
+brightmap texture OCOMPA38{
 	map "brightmaps/ocomp/OCOMPAX8"
 }
 

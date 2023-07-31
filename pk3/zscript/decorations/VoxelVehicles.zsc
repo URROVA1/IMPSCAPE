@@ -1,0 +1,39 @@
+class HelicopterUAC : Actor{
+	default{
+		//$Category "Voxel Vehicles Pack"
+		//$Title "Helicopter - UAC"
+		Radius 66;
+		Height 240;
+		Scale 2;
+		+SOLID;
+		+SHOOTABLE;
+		+NODAMAGE;
+		+NOBLOOD;
+		+CANPASS;
+	}
+	States{
+		Spawn:
+			UHEL A -1;
+			Stop;
+	}
+}
+
+class ForkliftYellow : Actor{
+	default{
+		//$Category "Voxel Vehicles Pack"
+		//$Title "Forklift - Yellow"
+		Radius 48;
+		Height 96;
+		Scale 1.5;
+		+SOLID;
+		+SHOOTABLE;
+		+NODAMAGE;
+		+NOBLOOD;
+		+CANPASS;
+	}
+	States{
+		Spawn:
+			YFOR A -1;
+			Stop;
+	}
+}
