@@ -15,6 +15,7 @@ ultratex.wad
 CageTex2.wad
 BlackGreenTechTexturesPack.wad
 GothicPack1 by gothic
+Some textures from Deus Vult II
 
 Post your doom textures DW thread{
 	Gez

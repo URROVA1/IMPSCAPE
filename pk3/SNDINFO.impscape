@@ -113,3 +113,6 @@ menu/backup "sounds/menu/MENU_BACK"
 menu/cursor "sounds/menu/MENU_CURSOR"
 menu/activate "sounds/menu/MENU_OPEN"
 menu/clear "sounds/menu/MENU_CLOSE"
+
+//Trueno
+thunder "sounds/THNDS01"

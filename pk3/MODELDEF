@@ -1,0 +1,5 @@
+Model CrushingCrate{
+	Path "MODELS"
+	Model 0 "cube64blue.md3"
+	FrameIndex TCBL A 0 0
+}
