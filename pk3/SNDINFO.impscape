@@ -17,6 +17,8 @@ compy8 "sounds/computer/Compy6.wav"
 
 machine1 "sounds/machine/COMPUTE3"
 
+waterfall "sounds/ambient/WFALL"
+
 //Puertas
 door1_start	"sounds/doors/d1_start.wav"
 door1_mid	"sounds/doors/d1_mid.wav"
@@ -102,6 +104,9 @@ $ambient 12 LiteBuzz4 point continuous 1.0
 $ambient 5 machine1 point continuous 1.0
 
 $ambient 13 Alarm2 point continuous 0.6
+
+$ambient 14 waterfall point continuous 0.6
+
 
 //Warps
 portalwarp "sounds/PORTALWARP"
