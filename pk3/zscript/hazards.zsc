@@ -19,9 +19,9 @@ Class CrushingCrate : Actor{
 	}
 	States{
 		Spawn:
-			TCBL A 0 A_SpawnProjectile("CrushingCrateDamage",-2,0,0,0,0,0);
 			TCBL A 2 {
 				if (Mass == 0x7FFFFFFF) A_RadiusThrust(10000,44);
+				else A_SpawnProjectile("CrushingCrateDamage",-2,0,0,0,0,0);
 			}
 			Loop;
 	}

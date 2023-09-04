@@ -266,6 +266,21 @@ class CircleParticleSpawner_Blue_Big : Actor{
 	}
 }
 
+class AreaParticleSpawner_White_Big : Actor{
+	default{
+		+NOGRAVITY;
+	}
+	states{
+		Spawn:
+			TNT1 A 1 {
+				A_SpawnParticle("#FFFFFF",SPF_FULLBRIGHT|SPF_RELPOS,100,5,angle,random(-192,192),random(-192,192),0,0,0,10);
+				A_SpawnParticle("#FFFFFF",SPF_FULLBRIGHT|SPF_RELPOS,100,7.5,angle,random(-192,192),random(-192,192),0,0,0,10);
+				A_SpawnParticle("#FFFFFF",SPF_FULLBRIGHT|SPF_RELPOS,100,10,angle,random(-192,192),random(-192,192),0,0,0,10);
+			}
+			loop;
+	}
+}
+
 //Lava ember
 Class BaseEmber : Actor{
 	default{

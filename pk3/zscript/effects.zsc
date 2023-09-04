@@ -76,6 +76,16 @@ class GiantExplosionFX : Actor{
 	}
 }
 
+class GiantExplosionFX_Faster : GiantExplosionFX{
+	States{
+		Spawn:
+			MISL B 30 Bright;
+			MISL C 10 Bright;
+			MISL D 10 Bright;
+			Stop;
+	}
+}
+
 class SmallSilentExplosionFX : ExplosionFX{
 	default{
 		SeeSound "";

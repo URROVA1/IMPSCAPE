@@ -38,16 +38,6 @@ script "FlyControl" (void){
 
 //Script para el mensaje de "Entering: Nombre del mapa"
 script "EnterMSG" (void){
-	int entermsg_is = false;
-	//Itera por ENTERMSG_MAPS, chequea si en ese mapa tiene que salir el titulo
-	for (int i = 0; i < ENTERMSG_COUNT; i++){
-		if (GetLevelInfo(LEVELINFO_LEVELNUM) == ENTERMSG_MAPS[i])
-			entermsg_is = true;
-	}
-	//Termina el script si no
-	if (entermsg_is == false)
-		terminate;
-		
 	hudmessage(s:"Entering:";HUDMSG_FADEINOUT,18423,CR_TAN,0.5,0.25,2.0,1.0,1.0,1.0);
 	hudmessage(n:PRINTNAME_LEVELNAME;HUDMSG_FADEINOUT,18424,CR_TAN,0.5,0.3,2.0,1.0,1.0,1.0);
 }

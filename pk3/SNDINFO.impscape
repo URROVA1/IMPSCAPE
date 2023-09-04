@@ -20,23 +20,23 @@ machine1 "sounds/machine/COMPUTE3"
 waterfall "sounds/ambient/WFALL"
 
 //Puertas
-door1_start	"sounds/doors/d1_start.wav"
-door1_mid	"sounds/doors/d1_mid.wav"
-door1_end	"sounds/doors/d1_end.wav"
+door1_start	"sounds/doors/d1_start.ogg"
+door1_mid	"sounds/doors/d1_mid.ogg"
+door1_end	"sounds/doors/d1_end.ogg"
 
-door2_start	"sounds/doors/d2_start.wav"
-door2_mid	"sounds/doors/d2_mid.wav"
-door2_end	"sounds/doors/d2_end.wav"
+door2_start	"sounds/doors/d2_start.ogg"
+door2_mid	"sounds/doors/d2_mid.ogg"
+door2_end	"sounds/doors/d2_end.ogg"
 
-door3_start	"sounds/doors/d3_start.wav"
-door3_mid	"sounds/doors/d3_mid.wav"
-door3_end	"sounds/doors/d3_end.wav"
+door3_start	"sounds/doors/d3_start.ogg"
+door3_mid	"sounds/doors/d3_mid.ogg"
+door3_end	"sounds/doors/d3_end.ogg"
 
 //Buzzes de luces.
-LiteBuzz1 "sounds/LiteBuzz/LITEBZ4.wav"
-LiteBuzz2 "sounds/LiteBuzz/LITEBZ5.wav"
-LiteBuzz3 "sounds/LiteBuzz/LITEBZHI.wav"
-LiteBuzz4 "sounds/LiteBuzz/LITEBZLO.wav"
+LiteBuzz1 "sounds/LiteBuzz/LITEBZ4.ogg"
+LiteBuzz2 "sounds/LiteBuzz/LITEBZ5.ogg"
+LiteBuzz3 "sounds/LiteBuzz/LITEBZHI.ogg"
+LiteBuzz4 "sounds/LiteBuzz/LITEBZLO.ogg"
 
 //Marines
 Marine/SawSite "sounds/ALLYSAWS"
@@ -48,11 +48,12 @@ Marine/Charge "sounds/MarineCharging"
 
 //Maquinas
 machine1 "sounds/machine/COMPUTE3"
-machine2 "sounds/machine/BIGMACHN.wav"
+machine2 "sounds/machine/BIGMACHN.ogg"
+machine3 "sounds/machine/AMB01.ogg"
 
 //Viento
-wind1 "sounds/ambient/AIRFLOW1.wav"
-wind2 "sounds/ambient/LOWFLOW.wav"
+wind1 "sounds/ambient/AIRFLOW1.ogg"
+wind2 "sounds/ambient/LOWFLOW.ogg"
 
 //Alarmas
 Alarm1 "sounds/ALARM1"
@@ -102,6 +103,9 @@ $ambient 11 LiteBuzz3 point continuous 1.0
 $ambient 12 LiteBuzz4 point continuous 1.0
 
 $ambient 5 machine1 point continuous 1.0
+$ambient 15 machine2 point continuous 1.0
+$ambient 16 machine3 point continuous 1.0
+
 
 $ambient 13 Alarm2 point continuous 0.6
 
@@ -110,6 +114,11 @@ $ambient 14 waterfall point continuous 0.6
 
 //Warps
 portalwarp "sounds/PORTALWARP"
+
+//Portal
+PortalLoading1 "sounds/portal/PortalLoading1.ogg"
+PortalLoading2 "sounds/portal/PortalLoading2.ogg"
+PortalNoise "sounds/portal/PortalNoise.ogg"
 
 
 ///////////////SONIDOS MENU////////////////////

@@ -49,14 +49,21 @@ map MAP04 "Abandoned Computer Station"{
 	Sky1 = "TEKWALL4"
 }
 
-map MAP05 "UAC Bridge Dimension"{
+map MAP05 "Warehouse"{
+	music = "D_TKWALL"
+	next = "MAP06"
+	Sky1 = "OSKY20"
+	Sky2 = "FIREBLU1", 2.5
+}
+
+map MAP06 "UAC Bridge Dimension"{
 	music = "D_GUSANO"
 	next = "MAP07"
 	LevelNum = 5
 	Sky1 = "HUBSKY"
 }
 
-map MAP06 "HUB"{
+map MAP07 "HUB"{
 	music = "D_MARS"
 	next = "MAP08"
 	LevelNum = 6
