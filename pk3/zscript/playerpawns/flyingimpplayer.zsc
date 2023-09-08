@@ -1,6 +1,6 @@
 
 ////////// IMP PLAYER //////////
-class FlyingImpPlayer : PlayerPawn{
+class FlyingImpPlayer : ImpscapePlayerPawn{
 	default{
 		Speed 1.2;
 		Health 100;

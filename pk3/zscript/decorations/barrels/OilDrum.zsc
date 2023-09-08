@@ -24,6 +24,8 @@ Class OilDrum : SwitchableDecoration{
 				if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1) || CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
 					return;
 				}
+				
+				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.
 				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
 					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
@@ -31,7 +33,7 @@ Class OilDrum : SwitchableDecoration{
 				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
 					
-				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
+				
 				A_BarrelDestroy();
 			}
 			goto Spawn;
@@ -40,13 +42,14 @@ Class OilDrum : SwitchableDecoration{
 				if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1) || CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
 					return;
 				}
+				
+				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
 				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
 					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
 					
 				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
 					
-				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
 				A_BarrelDestroy();
 			}
 			goto Spawn;
@@ -105,6 +108,8 @@ class OilDrumWeapon : DoomWeapon{
 		Weapon.AmmoGive 0;
 		Weapon.YAdjust 16;
 		+WEAPON.NOAUTOFIRE;
+		Weapon.SlotNumber 1;
+		Weapon.SelectionOrder 1;
 	}
 	states{
 		Ready:

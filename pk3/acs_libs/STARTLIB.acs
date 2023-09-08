@@ -53,6 +53,15 @@ script "DeathController" DEATH{
 	HudMessage(s:"GAME OVER";HUDMSG_TYPEON,5132,CR_TAN,0.5,0.5,9999.0,0.1,9999.0,1.0);
 }
 
+script "MorphCounter" (int seconds){
+	log(s:"executed");
+	SetFont("BIGFONT");
+	for (int i = seconds; i > 0; i--){
+		hudmessage(d:i;HUDMSG_PLAIN,81353,CR_TAN,0.5,0.95,2.0,1.0,1.0,1.0);
+		delay(35);
+	}
+}
+
 /*
 script "DebugGUI" ENTER{
 	int altfireenergy;

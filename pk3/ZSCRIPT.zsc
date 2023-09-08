@@ -1,7 +1,5 @@
 version "2.5"
-/*
-En este ZScript pongo includes a los otros archivos en el directiorio ZScript.
-*/
+
 #include "zscript/effects.zsc"
 #include "zscript/projectiles.zsc"
 #include "zscript/misc.zsc"
@@ -14,3 +12,53 @@ En este ZScript pongo includes a los otros archivos en el directiorio ZScript.
 #include "zscript/weapons.zsc"
 #include "zscript/playerpawns.zsc"
 #include "zscript/hazards.zsc"
+
+/*
+Someone wants some spaghetti??? nyeh heh heh heh!!! *Bonetrousle starts playing*
+
+                                  ...........................`                                  
+                                 `mNNNNNNNNNNNNNNNNNNNNNNNNNN-                                  
+                               ohdMMMMMMMMMMMMMMMMMMMMMMMMMMMdhy                                
+                            .//dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN//-                             
+                          ``+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy``                           
+                         .mmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmm/                          
+                       osyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhss`                       
+                    .-:mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM/--                     
+                    oNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNh`                    
+                    sMMMMMMMh-------+MMMMMMMMMMMMMMMN/-------dMMMMMMMMMMMMd`                    
+                    sMMMMNsso+++++++ossdMMMMMMMMMMhss++++++++ssyMMMMMMMMMMd`                    
+                    sMMmmh-.+mmmmmMMd..ommMMMMMNmm+.-mMMmmmmm:.-mmNMMMMMMMd`                    
+                    sMM:.-mmy....-mMMmm+..dMMMMy..ymNMMd.....hmd..+MMMMMMMd`                    
+                    sMM- .NMy    `mMMMM+ `dMMMMy  yMMMMd    `dMN  /MMMMMMMd`                    
+                    sMM- .NMh::::/NMMMM+ `dMMMMy  yMMMMm:::::mMN  /MMMMMMMd`                    
+                    sMM:`-mNNMMMMMMMMNN+``dMMMMy``yNNMMMMMMMMNNm``/NNMMMMMd`                    
+                    sMMmdh--oMMMMMMMd--oddNMMMMNdd+-:NMMMMMMM/-:dds--hMMMMd`                    
+                    sMMMMNooooooooooooodMMMMMMMMMMyoooooooooooosMMy  :ooNMd`                    
+                    ommMMMMMh......./MMMMMNmmMMMMMMMN:.......dMMMMy  `..NMd`                    
+                     ``dMMMMMMMMMMMMMMMMMN- .NMMMMMMMMMMMMMMMMMMMMy  sMMMMd`                    
+                    /hh/::::sMMMMMMMMMMy::` .NMMMMMMMMMMMMMMMMMMMMy  yMM/:-                     
+                    sMM- `//sMMMMMMMMMM+    `yydMMMMMMMMMMMMMMMMyys//syy`                       
+                    oMN- -NMMMMMMMMMMMM+       /MMMMMMMMMMMMMMMN  /MM/                          
+                    ```dNd.`+MMMMMMMMMM+  hNd` /MMMMMMMMMMMMMMMN  /MM/                          
+                       dMm` /MMMMMMMMMMdssNMNsshMMMMMMMMMMMMMs++  /MM/                          
+                       ydy` /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-    /MM/                          
+                            /MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM-    /MM/                          
+                            `--dMMMMMMMMMMMMMMMMMMMMMMMMMMy--`    /MM/                          
+                               +sssssssssssssssssssssssssso++`    /MM/                          
+                               `....`  `.....  `.....  `..sMN-    /MM/                          
+                               yNNNNy  oNNNNd` :NNNNm. -NNNMM-    /MM/                          
+                               hMMMMh  oMMMMm` /MMMMN. -MMMMM-    /MM/            `syyyyyyyyyyyy
+    -:::::::`  ::-             ohhMMh  oMMMMm` /MMMMN. -MMmhh.    /MM/       .::::/hhdMMMMMMMNhh
+  ``mMMMMMMM/`.mNy               .mNh  oNNNNd` /NNNNm. -NNo       /MM/  `````oNNNNd.`+MMMNNNNd` 
+ +ddMMMMMMMMmdd--.                .-.  `----.  `-----  `--`       /MM/  hddddo----:ddmMMo----.  
+ sMMMMMMMMMMMMN`                                                  /MM/  ooooo:  /osNMmoo-  +oooo
+ sMMMMMMMMMMMMN`                                                ..oMM/       `..dMMmms    `hmmmm
+ oMMMMMMMMMMMMN`                                               `NNNMM/       +NNMMm.``     `````
+ -//NMMMMMMMMMN`                 `syo  /yy. `yy+  +yy` .yy/  oyhMMd//.    .yymMMo/:     +yyyyyyy
+    mMMMMMMMMMN/:-               `yho  oMM- .NMy  yMN. .hho:/mMMMMy     ::+MMMMM-    .::hMMMMMMM
+    mMMMMMMMMMMMMh```          ``````  oNm- .mNs  sNm.  ``sMMMMMNNs  ```NMMMMNNN-  ``+MMMMMMMMMM
+    mMMMMMMMMMMMMNmm/          smmmmy  `..`  ...  ...  -mmNMMMMN..`  ommMMMMMy..` .dmNMMMMMMMMMM
+    ++sMMMMMMMMMMMMMhso.       hMMMMmssssssssssssssssssyMMMMMs++     yMMMMmo+:  +ssMMMMMMMMMMMMM
+      -NMMMMMMMMMMMMMMM/..     smmmmmmmmmmmmmmmmmmmmmmmmmmmmd-    `..yMMMMd`    dMMMMMMMMMMMMMMM
+      -NMMMMMMMMMMMMMMMMMm`                                       /MMMMMMMd`    dMMMMMMMMMMMMMMM
+*/

@@ -1,4 +1,4 @@
-class ShaderHandler : StaticEventHandler {
+class eh_Shaders : StaticEventHandler {
 	override void RenderOverlay(RenderEvent e) {
 		PlayerInfo p = players[consoleplayer];
 		
@@ -29,5 +29,17 @@ class ShaderHandler : StaticEventHandler {
 			Shader.SetUniform1f(p, "Contrast", "contrast", CVar.GetCVar("shd_cntr_contrast",p).GetFloat());
 			break;
 		}
+	}
+}
+
+class eh_GlobalVariables : EventHandler{
+	bool player_morphed;
+	bool is_unmorphing;
+	int unmorphing_health;
+	bool unmorphing_explosivebarrel;
+	bool unmorphing_oildrum;
+	
+	override void OnRegister(){
+		
 	}
 }

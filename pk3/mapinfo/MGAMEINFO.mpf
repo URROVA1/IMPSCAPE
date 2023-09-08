@@ -3,7 +3,7 @@ GameInfo{
    DimColor = "00 FF 00"
    DimAmount = 0.5
    BlurAmount = 0.0
-   AddEventHandlers = "ShaderHandler"
+   AddEventHandlers = "eh_Shaders", "eh_GlobalVariables"
    TitleTime = 2147483647 //INFINITE
    TitleMusic = "D_INTRO"
    IntermissionMusic = "D_TELEPT"

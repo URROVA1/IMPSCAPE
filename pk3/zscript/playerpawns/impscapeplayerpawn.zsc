@@ -1,0 +1,100 @@
+class ImpscapePlayerPawn : PlayerPawn {
+
+	void _take_arm(){
+		if (self is "ImpPlayer"){
+			A_TakeInventory("ImpArm",1,AAPTR_PLAYER1);
+		}
+		if (self is "DarkImpPlayer"){
+			A_TakeInventory("DarkImpArm",1,AAPTR_PLAYER1);
+		}
+	}
+
+	override void PostBeginPlay(){
+		Super.PostBeginPlay();
+	}
+
+	//NO NECESITO QUE CORRA TODOS LOS FRAMES pero no se como hacerlo de otra manera XDDDDDDDDD
+	override void Tick(){
+		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+	
+		//Si tenia el item de control, pierde el arma y gana el barril
+		if (CheckInventory("ExplosiveBarrelUnmorphItem",1,AAPTR_PLAYER1)){
+			A_TakeInventory("ExplosiveBarrelUnmorphItem",1,AAPTR_PLAYER1);
+			_take_arm();
+			A_GiveInventory("ExplosiveBarrelWeapon");
+		}
+		if (CheckInventory("OilDrumUnmorphItem",1,AAPTR_PLAYER1)){
+			A_TakeInventory("OilDrumUnmorphItem",1,AAPTR_PLAYER1);
+			_take_arm();
+			A_GiveInventory("OilDrumWeapon");
+		}
+		
+		//Item de control de la vida
+		if (CheckInventory("HealthUnmorphItem",1,AAPTR_PLAYER1)){
+			int unmorph_health = CountInv("HealthUnmorphItem", AAPTR_PLAYER1);
+			A_TakeInventory("HealthUnmorphItem",unmorph_health,0,AAPTR_PLAYER1);
+			//health = unmorph_health;
+			A_SetHealth(unmorph_health,AAPTR_PLAYER1);
+		}
+		
+		A_Log(String.Format("%d", pPlayer.health));
+		
+		Super.Tick();
+	}
+
+	Override bool MorphPlayer(playerinfo activator, Class<PlayerPawn> spawntype, int duration, int style, Class<Actor> enter_flash = null, Class<Actor> exit_flash = null){
+		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+		int premorph_health = health;
+		
+		//Da un item para que el jugador cambie de forma y se de cuenta que tenia un barril.
+		if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1)){
+			A_GiveInventory("ExplosiveBarrelUnmorphItem", 1, AAPTR_PLAYER1); 
+		}
+		if (CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
+			A_GiveInventory("OilDrumUnmorphItem", 1, AAPTR_PLAYER1); 
+		}
+		
+		//Da otro item para guardar la vida antes de morphear.
+		A_GiveInventory("HealthUnmorphItem", health, AAPTR_Player1);
+		
+		return Super.MorphPlayer(activator, spawntype, duration, style, enter_flash, exit_flash);
+	}
+	
+	Override bool UndoPlayerMorph(playerinfo activator, int unmorphflag = 0, bool force = false){
+		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+		int premorph_health = health;
+		
+		//Le da de nuevo el ImpArm
+		A_GiveInventory("ImpArm", 1, AAPTR_PLAYER1); 
+		
+		//Da un item para que el jugador cambie de forma y se de cuenta que tenia un barril.
+		if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1)){
+			A_GiveInventory("ExplosiveBarrelUnmorphItem", 1, AAPTR_PLAYER1); 
+		}
+		if (CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
+			A_GiveInventory("OilDrumUnmorphItem", 1, AAPTR_PLAYER1); 
+		}
+		
+		//Da otro item para guardar la vida antes de morphear.
+		A_GiveInventory("HealthUnmorphItem", health, AAPTR_Player1);
+		
+		//Cambia a el ImpArm
+		PickWeapon(1,0);
+		
+		bool r = Super.UndoPlayerMorph(activator, unmorphflag, force);
+		
+		return r;
+	}
+}
+
+
+
+//////////UNMORPH ITEMS//////////////
+class HealthUnmorphItem : Inventory{
+	default{
+		Inventory.MaxAmount 200;
+		Inventory.Amount 1;
+	}
+}
+class ExplosiveBarrelUnmorphItem : Inventory {}
+class OilDrumUnmorphItem : Inventory {}

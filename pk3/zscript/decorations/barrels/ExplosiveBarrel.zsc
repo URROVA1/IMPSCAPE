@@ -31,29 +31,35 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 			Wait;
 		Active:
 			TNT1 A 1{
+				Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+			
 				if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1) || CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
 					return;
 				}
+				
+				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
+				
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.
-				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
+				if (pPlayer is "ImpPlayer")
 					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
 					
-				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
+				if (pPlayer is "DarkImpPlayer")
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
 					
-				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
 				A_BarrelDestroy();
 			}
 			goto Spawn;
 		Inactive:
 			TNT1 A 1{
+				Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+			
 				if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1) || CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
 					return;
 				}
-				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
+				if (pPlayer is "ImpPlayer")
 					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
 					
-				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
+				if (pPlayer is "DarkImpPlayer")
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
 				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
 				A_BarrelDestroy();
@@ -70,7 +76,9 @@ class ExplosiveBarrelWeapon : DoomWeapon{
 		Weapon.AmmoUse 0;
 		Weapon.AmmoGive 0;
 		Weapon.YAdjust 16;
+		Weapon.SlotNumber 1;
 		+WEAPON.NOAUTOFIRE;
+		Weapon.SelectionOrder 1;
 	}
 	states{
 		Ready:

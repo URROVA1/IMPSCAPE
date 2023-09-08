@@ -23,8 +23,7 @@ glow{
 
 //Bola del jugador (copiado y pegado desde lights.pk3)
 
-pointlight IMPBALL
-{
+pointlight IMPBALL{
     color 1.0 0.7 0.4
     size 96
 	attenuate 1
@@ -68,8 +67,7 @@ object impplayerball{
 
 
 /////////////////////////OilDrum///////////////////////////
-flickerlight2 BARRELFLAME
-{
+flickerlight2 BARRELFLAME{
     color 1.0 0.9 0.0
     size 40
     secondarySize 46
@@ -77,94 +75,81 @@ flickerlight2 BARRELFLAME
     offset 0 0 0
 }
 
-object BarrelFlames
-{
+object BarrelFlames{
     frame OILF { light BARRELFLAME }
 }
 
-object OilDrum
-{
+object OilDrum{
     frame OILDB { light ROCKET_X1 }
     frame OILDC { light ROCKET_X2 }
     frame OILDD { light ROCKET_X3 }
 }
 
 /////////////////////////Rocket Turret//////////////////////////////
-PointLight TROCKET
-{
+PointLight TROCKET{
 	Color 0.9 1.0 0.0
 	Size 68
 	Offset -40 0 0
 	Attenuate 1
 }
-FlickerLight TROCKET_X1
-{
+FlickerLight TROCKET_X1{
 	Color 0.9 1.0 0.5
 	Size 88
 	SecondarySize 96
 	Chance 0.3
 	Attenuate 1
 }
-FlickerLight TROCKET_X2
-{
+FlickerLight TROCKET_X2{
 	Color 0.4 0.5 0.1
 	Size 112
 	SecondarySize 120
 	Chance 0.3
 	Attenuate 1
 }
-FlickerLight TROCKET_X3
-{
+FlickerLight TROCKET_X3{
 	Color 0.2 0.3 0.0
 	Size 136
 	SecondarySize 144
 	Chance 0.3
 	Attenuate 1
 }
-Object RTurretProjectile
-{
+Object RTurretProjectile{
 	Frame TMISA { Light TROCKET }
 	Frame TMISB { Light TROCKET_X1 }
 	Frame TMISC { Light TROCKET_X2 }
 	Frame TMISD { Light TROCKET_X3 }
 }
-FlickerLight DEATHEXPSMALLER_1
-{
+FlickerLight DEATHEXPSMALLER_1{
 	Color 0.9 1.0 0.4
 	Size 68
 	SecondarySize 76
 	Chance 0.8
 }
-FlickerLight DEATHEXPSMALLER_2
-{
+FlickerLight DEATHEXPSMALLER_2{
 	Color 0.9 1.0 0.4
 	Size 84
 	SecondarySize 92
 	Chance 0.8
 }
-FlickerLight DEATHEXPSMALLER_3
-{
+FlickerLight DEATHEXPSMALLER_3{
 	Color 0.8 0.9 0.2
 	Size 80
 	SecondarySize 88
 	Chance 0.8
 }
-FlickerLight DEATHEXPSMALLER_4
-{
+FlickerLight DEATHEXPSMALLER_4{
 	Color 0.7 0.6 0.0
 	Size 76
 	SecondarySize 84
 	Chance 0.8
 }
-FlickerLight DEATHEXPSMALLER_5
-{
+FlickerLight DEATHEXPSMALLER_5{
 	Color 0.6 0.5 0.0
 	Size 52
 	SecondarySize 60
 	Chance 0.8
 }
-Object DeathExplosionSmaller
-{
+Object DeathExplosionSmaller{
 	Frame DBOMA { Light DEATHEXPSMALLER_1 }
 	Frame DBOMB { Light DEATHEXPSMALLER_1 }
 	Frame DBOMC { Light DEATHEXPSMALLER_2 }
@@ -190,47 +175,59 @@ object SentryGun
 
 ///////////////////////////7UacHolograms/////////////////////////
 ////Green
-PointLight UAC1
-{
+PointLight UAC1{
 	color 0.0 1.0 0.0
     size 26
 }
 
-Object UACHolo1
-{
-FRAME UAC1 { light UAC1 }
+Object UACHolo1{
+	FRAME UAC1 { light UAC1 }
 }
-Object UACHolo2
-{
-FRAME UAC1 { light UAC1 }
+Object UACHolo2{
+	FRAME UAC1 { light UAC1 }
 }
 ////Cyan
-PointLight UAC2
-{
+PointLight UAC2{
 	color 0.0 0.3 0.5
     size 26
 }
 
-Object UACHolo3
-{
-FRAME UAC2 { light UAC2 }
+Object UACHolo3{
+	FRAME UAC2 { light UAC2 }
 }
-Object UACHolo4
-{
-FRAME UAC2 { light UAC2 }
+Object UACHolo4{
+	FRAME UAC2 { light UAC2 }
 }
 ////Orange
-PointLight UAC3
-{
+PointLight UAC3{
 	color 0.5 0.3 0.0
     size 26
 }
 
-Object UACHolo5
-{
-FRAME UAC3 { light UAC3 }
+Object UACHolo5{
+	FRAME UAC3 { light UAC3 }
 }
-Object UACHolo6
-{
-FRAME UAC3 { light UAC3 }
+Object UACHolo6{
+	FRAME UAC3 { light UAC3 }
+}
+
+//////////////////////POWERUPS//////////////////
+pointlight FirePowerUpLight{
+    color 1.0 0.0 1.0
+    size 32
+	attenuate 0
+}
+
+object FirePowerUp{
+	frame MANA {light FirePowerUpLight}
+}
+
+pointlight DarkImpOrbLight{
+    color 0.0 0.0 1.0
+    size 64
+	attenuate 0
+}
+
+object DarkImpOrb{
+	frame DIOB {light DarkImpOrbLight}
 }
