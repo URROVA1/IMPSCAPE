@@ -82,7 +82,7 @@ class DarkImpOrbItem : CustomInventory{
       loop;
 	Pickup: 
 		TNT1 A -1 {
-			ACS_NamedExecute("MorphCounter",0,10);
+			ACS_NamedExecute("MorphCounter",0,60);
 			A_GiveInventory("DarkImpTransform");
 		}
 		Stop;
@@ -105,7 +105,7 @@ class DarkImpTransform : PowerMorph{
 	default{
 		PowerMorph.PlayerClass "DarkImpPlayer";
 		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH;
-		Powerup.duration -10;
+		Powerup.duration -60;
 	}
 }
 
@@ -124,7 +124,7 @@ class RocketImpOrb : TransformationOrb{
 	}
 	states{
     Spawn:
-			DIOB ABC 5;
+			RIOB ABC 5;
 			loop;
 	Deselect:
 			IADB A 1 A_Lower(12);

@@ -15,58 +15,58 @@ class RocketImpPlayer : ImpscapePlayerPawn{
 		Player.DisplayName "RocketImp";
 		Player.StartItem "RocketImpArm";
 		Player.StartItem "MonsterMana", 1;
-		Player.Face "STF";
+		Player.Face "STR";
 		+NOSKIN;
 	}
 	States{
 		Spawn:
-			DRKS AB 7;
-			DRKS A 0;
+			RIMP AB 7;
+			RIMP A 0;
 			Loop;
 		See:
-			DRKS AABBCCDD 3;
+			RIMP AABBCCDD 3;
 			Loop;
 		Missile:
-			DRKS EF 8;
-			DRKS G  6;
+			RIMP EF 8;
+			RIMP G  6;
 			Goto Spawn;
 		Melee:
-			DRKS EF 8;
-			DRKS G  6;
+			RIMP EF 8;
+			RIMP G  6;
 			Goto Spawn;
 		Pain:
-			DRKS H 4;
-			DRKS H 4 A_Pain;
+			RIMP H 4;
+			RIMP H 4 A_Pain;
 			Goto Spawn;
 		Death:
-			DRKS I 8 A_PlayerSkinCheck("AltSkinDeath");
-			DRKS J 8 A_PlayerScream;
-			DRKS K 6;
-			DRKS L 6 A_NoBlocking;
-			DRKS M -1;
+			RIMP I 8 A_PlayerSkinCheck("AltSkinDeath");
+			RIMP J 8 A_PlayerScream;
+			RIMP K 6;
+			RIMP L 6 A_NoBlocking;
+			RIMP M -1;
 			Stop;
 		XDeath:
-			DRKS N 5 A_PlayerSkinCheck("AltSkinXDeath");
-			DRKS O 5 A_XScream;
-			DRKS P 5;
-			DRKS Q 5 A_NoBlocking;
-			DRKS RST 5;
-			DRKS U -1;
+			RIMP N 5 A_PlayerSkinCheck("AltSkinXDeath");
+			RIMP O 5 A_XScream;
+			RIMP P 5;
+			RIMP Q 5 A_NoBlocking;
+			RIMP RST 5;
+			RIMP U -1;
 			Stop;
 		AltSkinDeath:
-			DRKS I 8;
-			DRKS J 8 A_PlayerScream;
-			DRKS K 6;
-			DRKS L 6 A_NoBlocking;
-			DRKS M -1;
+			RIMP I 8;
+			RIMP J 8 A_PlayerScream;
+			RIMP K 6;
+			RIMP L 6 A_NoBlocking;
+			RIMP M -1;
 			Stop;
 		AltSkinXDeath:
-			DRKS N 5 A_PlayerScream;
-			DRKS O 5 A_NoBlocking;
-			DRKS P 5;
-			DRKS Q 5 A_SkullPop;
-			DRKS RST 5;
-			DRKS U -1;
+			RIMP N 5 A_PlayerScream;
+			RIMP O 5 A_NoBlocking;
+			RIMP P 5;
+			RIMP Q 5 A_SkullPop;
+			RIMP RST 5;
+			RIMP U -1;
 			Stop;
 	}
 }

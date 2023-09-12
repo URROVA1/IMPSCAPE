@@ -231,3 +231,13 @@ pointlight DarkImpOrbLight{
 object DarkImpOrb{
 	frame DIOB {light DarkImpOrbLight}
 }
+
+pointlight RocketImpOrbLight{
+    color 1.0 0.0 0.0
+    size 64
+	attenuate 0
+}
+
+object RocketImpOrb{
+	frame RIOB {light RocketImpOrbLight}
+}
