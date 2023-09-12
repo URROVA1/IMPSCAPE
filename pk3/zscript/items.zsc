@@ -15,7 +15,7 @@ class FirePowerUp : inventory{
 //Item que te comvierte en un dark imp
 class DarkImpOrb : Weapon{
 	default{
-		inventory.PickUpMessage "Picked up a DarkImp orb.";
+		inventory.PickUpMessage "Picked up a Dark Imp orb.";
 		Weapon.ammogive 1;
 		Weapon.ammouse 1;
 		Weapon.ammotype "DarkImpAmmo";
@@ -29,10 +29,10 @@ class DarkImpOrb : Weapon{
 			DIOB ABC 5;
 			loop;
 	Deselect:
-			IADB A 1 A_Lower;
+			IADB A 1 A_Lower(12);
 			Loop;
 	Select:
-			IADB A 1 A_Raise;
+			IADB A 1 A_Raise(12);
 			Loop;
 	Ready:
 			IADB ABC 7 A_WeaponReady;
@@ -52,7 +52,7 @@ class DarkImpOrbItem : CustomInventory{
 	default{
 		inventory.amount 1;
 		inventory.maxamount 5;
-		inventory.PickUpMessage "Darkimp Time!";
+		inventory.PickUpMessage "Dark Imp Time!";
 		+COUNTITEM;
 		//+INVENTORY.INVBAR;
 		//+FLOATBOB;
@@ -64,7 +64,7 @@ class DarkImpOrbItem : CustomInventory{
       loop;
 	Pickup: 
 		TNT1 A -1 {
-			ACS_NamedExecute("MorphCounter",0,60);
+			ACS_NamedExecute("MorphCounter",0,10);
 			A_GiveInventory("DarkImpTransform");
 		}
 		Stop;
@@ -87,38 +87,90 @@ class DarkImpTransform : PowerMorph{
 	default{
 		PowerMorph.PlayerClass "DarkImpPlayer";
 		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH;
-		Powerup.duration -60;
+		Powerup.duration -10;
 	}
 }
 
-//Item que te convierte en un imp volador
-class FlyingImpOrb : CustomInventory{
+/////////////ROCKETIMP ORB////////////////////////////////////
+//Item que te comvierte en un dark imp
+class RocketImpOrb : Weapon{
+	default{
+		inventory.PickUpMessage "Picked up a Rocket Imp orb.";
+		Weapon.ammogive 1;
+		Weapon.ammouse 1;
+		Weapon.ammotype "RocketImpAmmo";
+		Weapon.SlotNumber 3;
+		Weapon.SelectionOrder 5000;
+		Inventory.PickupSound "misc/p_pkup";
+		+COUNTITEM;
+	}
+	states{
+    Spawn:
+			DIOB ABC 5;
+			loop;
+	Deselect:
+			IADB A 1 A_Lower(12);
+			Loop;
+	Select:
+			IADB A 1 A_Raise(12);
+			Loop;
+	Ready:
+			IADB ABC 7 A_WeaponReady;
+			Loop;
+	Fire:
+			//Tiene que spawnear fisicamente un CustomInventory
+			//porque si no GZDoom no entiende y crashea.
+			IMPD A 0 A_SpawnItem("RocketImpOrbItem"); 
+			IMPD A 5 ThrustThing(0,1,0,0);
+			Goto Ready;
+	}
+}
+
+class RocketImpOrbItem : CustomInventory{
+	int PlayerHasBarrel;
+	
 	default{
 		inventory.amount 1;
 		inventory.maxamount 5;
-		inventory.PickUpMessage "Flying Imp Time!";
+		inventory.PickUpMessage "Rocket Imp Time!";
 		+COUNTITEM;
 		//+INVENTORY.INVBAR;
 		//+FLOATBOB;
 	}
+
 	states{
     Spawn:
-      MANA ABC 5;
+      DIOB ABC 5 BRIGHT;
       loop;
 	Pickup: 
-		TNT1 A -1 A_GiveInventory("FlyingImpTransform");
+		TNT1 A -1 {
+			ACS_NamedExecute("MorphCounter",0,30);
+			A_GiveInventory("RocketImpTransform");
+		}
 		Stop;
 	}
 }
 
-
-class FlyingImpTransform : PowerMorph{
+class RocketImpAmmo : Ammo{
 	default{
-		PowerMorph.PlayerClass "FlyingImpPlayer";
+		Inventory.maxamount 5;
+	}
+	States
+		{
+		Spawn:
+			DIOB A -1;
+			Stop;
+		}
+}
+
+class RocketImpTransform : PowerMorph{
+	default{
+		PowerMorph.PlayerClass "RocketImpPlayer";
 		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH;
-		Powerup.duration 0x7FFFFFFF;
+		Powerup.duration -30;
 	}
 }
+
 
 //Llave para el nivel secreto
 class BossKey : Inventory{

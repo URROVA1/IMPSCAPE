@@ -27,12 +27,12 @@ Class OilDrum : SwitchableDecoration{
 				
 				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.
-				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
-					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
-					
-				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
+				if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
-					
+				else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1))
+					A_TakeInventory("RocketImpArm",1,0,AAPTR_PLAYER1);
+				else
+					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
 				
 				A_BarrelDestroy();
 			}
@@ -44,11 +44,12 @@ Class OilDrum : SwitchableDecoration{
 				}
 				
 				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
-				if (CheckInventory("ImpArm",1,AAPTR_PLAYER1))
-					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
-					
-				if (CheckInventory("DarkImpArm",1,AAPTR_PLAYER1))
+				if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
+				else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1))
+					A_TakeInventory("RocketImpArm",1,0,AAPTR_PLAYER1);
+				else
+					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
 					
 				A_BarrelDestroy();
 			}
@@ -126,12 +127,12 @@ class OilDrumWeapon : DoomWeapon{
 			Actor pPlayer = GetPointer(AAPTR_PLAYER1);
 			
 			A_FireProjectile("OilDrumProjectile");
-			
-			if (pPlayer is "ImpPlayer" || pPlayer is "FlyingImpPlayer")
-				A_GiveInventory("ImpArm",1,AAPTR_PLAYER1);
-				
-			if (pPlayer is "DarkImpPlayer")
+			if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))
 				A_GiveInventory("DarkImpArm",1,AAPTR_PLAYER1);
+			else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1))
+				A_GiveInventory("RocketImpArm",1,AAPTR_PLAYER1);
+			else
+				A_GiveInventory("ImpArm",1,AAPTR_PLAYER1);
 				
 			A_TakeInventory("OilDrumWeapon",1,0,AAPTR_PLAYER1);
 			}

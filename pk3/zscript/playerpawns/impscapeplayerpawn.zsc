@@ -1,11 +1,30 @@
 class ImpscapePlayerPawn : PlayerPawn {
 
 	void _take_arm(){
-		if (self is "ImpPlayer"){
+		
+		if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1)){
+			A_TakeInventory("DarkImpArm",1,AAPTR_PLAYER1);
+		}
+		else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1)){
+			A_TakeInventory("RocketImpArm",1,AAPTR_PLAYER1);
+		}
+		else{
 			A_TakeInventory("ImpArm",1,AAPTR_PLAYER1);
 		}
-		if (self is "DarkImpPlayer"){
+	}
+	
+	void _take_other_playerpawns_arms(){
+		if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1)){
+			A_TakeInventory("ImpArm",1,AAPTR_PLAYER1);
+			A_TakeInventory("RocketImpArm",1,AAPTR_PLAYER1);
+		}
+		else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1)){
+			A_TakeInventory("ImpArm",1,AAPTR_PLAYER1);
 			A_TakeInventory("DarkImpArm",1,AAPTR_PLAYER1);
+		}
+		else{
+			A_TakeInventory("DarkImpArm",1,AAPTR_PLAYER1);
+			A_TakeInventory("RocketImpArm",1,AAPTR_PLAYER1);
 		}
 	}
 
@@ -16,6 +35,8 @@ class ImpscapePlayerPawn : PlayerPawn {
 	//NO NECESITO QUE CORRA TODOS LOS FRAMES pero no se como hacerlo de otra manera XDDDDDDDDD
 	override void Tick(){
 		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
+		
+		_take_other_playerpawns_arms(); //DIOS BOLUDO POR QUE GZDOOM ME OBLIGA A HACER ESTO
 	
 		//Si tenia el item de control, pierde el arma y gana el barril
 		if (CheckInventory("ExplosiveBarrelUnmorphItem",1,AAPTR_PLAYER1)){
@@ -36,8 +57,6 @@ class ImpscapePlayerPawn : PlayerPawn {
 			//health = unmorph_health;
 			A_SetHealth(unmorph_health,AAPTR_PLAYER1);
 		}
-		
-		A_Log(String.Format("%d", pPlayer.health));
 		
 		Super.Tick();
 	}
@@ -87,6 +106,31 @@ class ImpscapePlayerPawn : PlayerPawn {
 	}
 }
 
+
+class ImpscapeWeapon : Weapon{
+	float yoffset;
+	
+	//Va hacia al estado de ataque si el jugador deja de presionar AltFire
+	action state _A_JumpIfNotHold(){
+		int buttons = GetPlayerInput(INPUT_BUTTONS);
+		if (!(buttons & BT_ALTATTACK)){
+			return ResolveState("AltShoot");
+		}
+		return ResolveState(null);
+	}
+	
+	//Custom A_Raise that doesnt allow you to select another weapon
+	action void _visual_raise_init(){
+		invoker.yoffset = 100;
+	}
+	
+	action void _visual_raise(){
+		if (invoker.yoffset >= 32){
+			invoker.yoffset-=12;
+			A_WeaponOffset(0,invoker.yoffset);
+		}
+	}
+}
 
 
 //////////UNMORPH ITEMS//////////////

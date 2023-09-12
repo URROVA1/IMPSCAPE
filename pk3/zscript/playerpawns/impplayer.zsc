@@ -73,7 +73,7 @@ class ImpPlayer : ImpscapePlayerPawn{
 }
 
 
-class ImpArm : weapon{
+class ImpArm : ImpscapeWeapon{
 	default{
 		radius 20;
 		height 20;
@@ -88,25 +88,16 @@ class ImpArm : weapon{
 		weapon.ammogive 1;
 		weapon.SlotNumber 1;
 	}
-	
-	//Va hacia al estado de ataque si el jugador deja de presionar AltFire
-	action state _A_JumpIfNotHold(){
-		int buttons = GetPlayerInput(INPUT_BUTTONS);
-		if (!(buttons & BT_ALTATTACK)){
-			return ResolveState("AltShoot");
-		}
-		return ResolveState(null);
-	}
 
 	States{
 		Spawn:
 			MANA A 2;
 			loop;
 		Deselect:
-			IMPD A 1 A_Lower;
+			IMPD A 1 A_Lower(12);
 			LOOP;
 		Select:
-			IMPD A 1 A_Raise;
+			IMPD A 1 A_Raise(12);
 			LOOP;
 		Ready:
 			IMPD A 7 A_WeaponReady;
@@ -142,30 +133,30 @@ class ImpArm : weapon{
 			Goto Ready;
 		//Normal
 		FireMid:
-			IMPD F 3;
+			IMPD F 4;
 			IMPD G 3 A_GunFlash;
-			IMPD H 3 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 4 A_FireProjectile ("ImpPlayerBall");
 			IMPD I 3;
-			TNT1 A 3 A_ReFire;
+			TNT1 A 4 A_ReFire;
 			IMPD J 3;
 			Goto Ready;
 		//Rapido
 		FireFast:
+			IMPD F 3;
+			IMPD G 2 A_GunFlash;
+			IMPD H 3 A_FireProjectile ("ImpPlayerBall");
+			IMPD I 2;
+			TNT1 A 3 A_ReFire;
+			IMPD J 2;
+			Goto Ready;
+		//Muy rapido
+		FireVeryFast:
 			IMPD F 2;
 			IMPD G 2 A_GunFlash;
 			IMPD H 2 A_FireProjectile ("ImpPlayerBall");
 			IMPD I 2;
 			TNT1 A 2 A_ReFire;
 			IMPD J 2;
-			Goto Ready;
-		//Muy rapido
-		FireVeryFast:
-			IMPD F 1;
-			IMPD G 1 A_GunFlash;
-			IMPD H 1 A_FireProjectile ("ImpPlayerBall");
-			IMPD I 1;
-			TNT1 A 1 A_ReFire;
-			IMPD J 1;
 			Goto Ready;
 
 		Flash:

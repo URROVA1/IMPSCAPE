@@ -14,7 +14,7 @@ DoomEdNums{
 //Items
   11000 = FirePowerUp
   11001 = DarkImpOrb
-  11002 = FlyingImpOrb
+  11002 = RocketImpOrb
   11003 = RandomExperimentalWeapon
   11004 = BossKey
 //Marines
@@ -79,7 +79,7 @@ DoomEdNums{
   327 = HPipe3
   328 = HPipe4
   329 = HPipe5
-  8273 = OilDrum
+  8273 = DraggableExplosiveBarrel
   8276 = GTechPillar
   8277 = GTechPillarShort
   8278 = GTechPillarLight

@@ -40,11 +40,13 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
 				
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.
-				if (pPlayer is "ImpPlayer")
-					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
-					
-				if (pPlayer is "DarkImpPlayer")
+				if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))
 					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
+				else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1))
+					A_TakeInventory("RocketImpArm",1,0,AAPTR_PLAYER1);
+				else
+					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
+				
 					
 				A_BarrelDestroy();
 			}
@@ -56,12 +58,15 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 				if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1) || CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1)){
 					return;
 				}
-				if (pPlayer is "ImpPlayer")
-					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
-					
-				if (pPlayer is "DarkImpPlayer")
-					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
+				
 				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
+				if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))
+					A_TakeInventory("DarkImpArm",1,0,AAPTR_PLAYER1);
+				else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1))
+					A_TakeInventory("RocketImpArm",1,0,AAPTR_PLAYER1);
+				else
+					A_TakeInventory("ImpArm",1,0,AAPTR_PLAYER1);
+				
 				A_BarrelDestroy();
 			}
 			goto Spawn;
@@ -69,7 +74,9 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 }
 
 //Arma
-class ExplosiveBarrelWeapon : DoomWeapon{
+class ExplosiveBarrelWeapon : ImpscapeWeapon{
+	
+
 	default{
 		Height 20;
 		Weapon.SelectionOrder 2800;
@@ -82,13 +89,20 @@ class ExplosiveBarrelWeapon : DoomWeapon{
 	}
 	states{
 		Ready:
-			BEXW ABCDCB 1 A_WeaponReady;
+			BEXW ABCDCB 1{
+				A_WeaponReady();
+				 _visual_raise();
+			}
 			Loop;
 		Deselect:
-			BEXW A 1 A_Lower;
+			BEXW A 1 A_Lower(99999999); //Rapidisimo porque sino ocurren bugs
 			Loop;
+			//Goto Ready;
 		Select:
-			BEXW A 1 A_Raise;
+			TNT1 A 0 _visual_raise_init();
+			BEXW A 1 A_Raise(99999999); //Rapidisimo porque sino ocurren bugs
+		VisualRaise:
+			BEXW A 1;
 			Loop;
 		Fire:
 			BEXW A 1 {
@@ -96,11 +110,14 @@ class ExplosiveBarrelWeapon : DoomWeapon{
 			
 			A_FireProjectile("ExplosiveBarrelProjectile");
 			
-			if (pPlayer is "ImpPlayer" || pPlayer is "FlyingImpPlayer")
+			if (pPlayer is "ImpPlayer")
 				A_GiveInventory("ImpArm",1,AAPTR_PLAYER1);
 				
 			if (pPlayer is "DarkImpPlayer")
 				A_GiveInventory("DarkImpArm",1,AAPTR_PLAYER1);
+			
+			if (pPlayer is "RocketImpPlayer")
+				A_GiveInventory("RocketImpArm",1,AAPTR_PLAYER1);
 				
 			A_TakeInventory("ExplosiveBarrelWeapon",1,0,AAPTR_PLAYER1);
 			}
