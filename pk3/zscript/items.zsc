@@ -12,8 +12,25 @@ class FirePowerUp : inventory{
      }
 }
 
+class TransformationOrb : Weapon{
+	action void _unselect_if_barrel(){
+		if (CheckInventory("ExplosiveBarrelWeapon",1,AAPTR_PLAYER1))
+			A_SelectWeapon("ExplosiveBarrelWeapon");
+		else if (CheckInventory("OilDrumWeapon",1,AAPTR_PLAYER1))
+			A_SelectWeapon("OilDrumWeapon");
+		else{
+			if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1)){
+				A_SelectWeapon("DarkImpArm");
+			}
+			else if (CheckInventory("RocketImpTransform",1,AAPTR_PLAYER1)){
+				A_SelectWeapon("RocketImpArm");
+			}
+		}
+	}
+}
+
 //Item que te comvierte en un dark imp
-class DarkImpOrb : Weapon{
+class DarkImpOrb : TransformationOrb{
 	default{
 		inventory.PickUpMessage "Picked up a Dark Imp orb.";
 		Weapon.ammogive 1;
@@ -32,6 +49,7 @@ class DarkImpOrb : Weapon{
 			IADB A 1 A_Lower(12);
 			Loop;
 	Select:
+			TNT1 A 0 _unselect_if_barrel();
 			IADB A 1 A_Raise(12);
 			Loop;
 	Ready:
@@ -93,7 +111,7 @@ class DarkImpTransform : PowerMorph{
 
 /////////////ROCKETIMP ORB////////////////////////////////////
 //Item que te comvierte en un dark imp
-class RocketImpOrb : Weapon{
+class RocketImpOrb : TransformationOrb{
 	default{
 		inventory.PickUpMessage "Picked up a Rocket Imp orb.";
 		Weapon.ammogive 1;
@@ -112,6 +130,7 @@ class RocketImpOrb : Weapon{
 			IADB A 1 A_Lower(12);
 			Loop;
 	Select:
+			TNT1 A 0 _unselect_if_barrel();
 			IADB A 1 A_Raise(12);
 			Loop;
 	Ready:

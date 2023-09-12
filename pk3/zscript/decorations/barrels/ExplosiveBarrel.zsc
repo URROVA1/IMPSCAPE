@@ -75,8 +75,6 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 
 //Arma
 class ExplosiveBarrelWeapon : ImpscapeWeapon{
-	
-
 	default{
 		Height 20;
 		Weapon.SelectionOrder 2800;
@@ -91,18 +89,13 @@ class ExplosiveBarrelWeapon : ImpscapeWeapon{
 		Ready:
 			BEXW ABCDCB 1{
 				A_WeaponReady();
-				 _visual_raise();
 			}
 			Loop;
 		Deselect:
-			BEXW A 1 A_Lower(99999999); //Rapidisimo porque sino ocurren bugs
+			BEXW A 1 A_Lower;
 			Loop;
-			//Goto Ready;
 		Select:
-			TNT1 A 0 _visual_raise_init();
-			BEXW A 1 A_Raise(99999999); //Rapidisimo porque sino ocurren bugs
-		VisualRaise:
-			BEXW A 1;
+			BEXW A 1 A_Raise;
 			Loop;
 		Fire:
 			BEXW A 1 {
