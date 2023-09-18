@@ -1,0 +1,23 @@
+Information:
+Name: Crate Models
+Connection: N/A
+Palette: Doom
+Summon: Cube[32, 64][Blue, Green, Brown], Crate[32, 64, 128][Clean, Plank, Cross]
+Ambient Sound: N/A
+De-/Activatable: N/A
+Destroyable: N/A
+Special Effects: N/A
+Brightmaps: N/A
+Actor modification: N/A
+ACS: N/A
+
+Credits:
+Code: Rifleman
+GLDefs: N/A
+Sounds: N/A
+Sprites: OTEX by ukiro
+Sprite Edit: Rifleman
+Idea Base: No need to make crates with sectors.
+
+Description:
+15 models of crates - no need to draw sectors or use 3d floors.

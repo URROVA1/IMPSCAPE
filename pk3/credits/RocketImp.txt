@@ -1,0 +1,21 @@
+Submitted: Skelegant
+Decorate: Skelegant
+GLDefs: Skelegant
+Sounds: id Software
+Sprites: id Software
+Sprite Edit: Skelegant
+
+Name: Rocket Imp
+Difficulty: Medium
+Connections: None
+Summon: RocketImp, HungRocketImp
+Melee: No
+Distance: Projectile
+Type: Demon, Cybernetic
+Brightmaps: No
+Added States: No
+ACS: No
+
+
+A cyborg imp with dual rocket launchers. Gibbing causes it to explode. Comes with hanging corpse
+prop.

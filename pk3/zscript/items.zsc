@@ -127,14 +127,14 @@ class RocketImpOrb : TransformationOrb{
 			RIOB ABC 5;
 			loop;
 	Deselect:
-			IADB A 1 A_Lower(12);
+			IARO A 1 A_Lower(12);
 			Loop;
 	Select:
 			TNT1 A 0 _unselect_if_barrel();
-			IADB A 1 A_Raise(12);
+			IARO A 1 A_Raise(12);
 			Loop;
 	Ready:
-			IADB ABC 7 A_WeaponReady;
+			IARO ABC 7 A_WeaponReady;
 			Loop;
 	Fire:
 			//Tiene que spawnear fisicamente un CustomInventory

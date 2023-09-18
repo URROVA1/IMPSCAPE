@@ -34,8 +34,12 @@ GlassTechPillar.wad by Mor'ladim
 OilDrum.awd by Captain Toenail
 PipePack.wad
 UACHolograms.wad
-FlyingImp.wad
 Annihilator.wad //For UAC Cyberdemons
+CrateModels.pk3
+RocketImp.wad
+Steam.wad
+Arachnophyte.wad //For UAC Spiderdemons
+
 
 //These only i picked the sprites for experimental weapon decoration.
 //De estos solo agarre sprites de pickup para las armas experimentales de decoracion
@@ -47,6 +51,7 @@ LaserCannon.wad
 
 === Sonidos | Sounds ===
 DSPLASMA from Doom 64 / PSX Doom
+WFALL from DBP59 - Zeppelin Armada
 
 === Voxeles | Voxels ===
 Voxel Vehicles Pack 1.0 (vvpck1.0.PK3) by NerdKoopa
