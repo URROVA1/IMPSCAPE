@@ -23,7 +23,7 @@ map TESTROOM "Fuck You So"{
 }
 
 map MAP01 "Demon contaiment D"{
-	music = "D_IN_CIT"
+	music = "D_ENTRY"
 	next = "MAP02"
 	LevelNum = 1
 	resetinventory
