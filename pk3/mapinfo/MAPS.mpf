@@ -56,14 +56,13 @@ map MAP05 "Warehouse"{
 	Sky2 = "FIREBLU1", 2.5
 	LevelNum = 5
 }
-/*
+
 map MAP06 "UAC Bridge Dimension"{
 	music = "D_GUSANO"
 	next = "MAP07"
 	LevelNum = 5
 	Sky1 = "HUBSKY"
 }
-*/
 
 map MAP07 "HUB"{
 	music = "D_MARS"
