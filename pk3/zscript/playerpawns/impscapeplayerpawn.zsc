@@ -62,6 +62,7 @@ class ImpscapePlayerPawn : PlayerPawn {
 	}
 
 	Override bool MorphPlayer(playerinfo activator, Class<PlayerPawn> spawntype, int duration, int style, Class<Actor> enter_flash = null, Class<Actor> exit_flash = null){
+	//Override bool MorphPlayer(){
 		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
 		int premorph_health = health;
 		
@@ -80,6 +81,7 @@ class ImpscapePlayerPawn : PlayerPawn {
 	}
 	
 	Override bool UndoPlayerMorph(playerinfo activator, int unmorphflag = 0, bool force = false){
+	//Override bool UndoPlayerMorph(){
 		Actor pPlayer = GetPointer(AAPTR_PLAYER1);
 		int premorph_health = health;
 		

@@ -31,7 +31,7 @@ map MAP01 "Demon contaiment D"{
 }
 
 map MAP02 "Demon control lab #2"{
-	music = "D_STALKS"
+	music = "D_TKWALL"
 	next = "MAP03"
 	LevelNum = 2
 }
@@ -50,7 +50,7 @@ map MAP04 "Abandoned Computer Station"{
 }
 
 map MAP05 "Warehouse"{
-	music = "D_TKWALL"
+	music = "D_SERIAL"
 	next = "MAP07"
 	Sky1 = "OSKY20"
 	Sky2 = "FIREBLU1", 2.5

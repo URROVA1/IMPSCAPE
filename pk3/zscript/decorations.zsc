@@ -376,3 +376,31 @@ class RunningImp : Actor{
 			Loop;
 	}
 }
+
+Class Flames : Actor{
+	default{
+		Radius 16;
+		Height 24;
+		damagetype "fire";
+		renderstyle "Add";
+		+NODAMAGETHRUST;
+		+BLOODLESSIMPACT;
+		-NOGRAVITY;
+		-DROPOFF;
+		-MISSILE;
+		-ACTIVATEIMPACT;
+		-ACTIVATEPCROSS;
+	}
+	States{
+		Spawn:
+			OILS A 0 bright;
+			OILS A 4 bright A_StartSound("BarrelFire/Loop", 5, CHANF_LOOP);
+			OILS A 0 bright A_StartSound("BarrelFire/Start", 6);
+			OILS BC 4 bright;
+		FireLoop:
+			OILF AB 4 bright;
+			OILF C 4 bright;
+			OILF C 0 bright;
+			Loop;
+	}
+}

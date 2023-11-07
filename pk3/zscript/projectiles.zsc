@@ -12,13 +12,6 @@ class PlasmaShotgunBall : ArachnotronPlasma{
 	}
 }
 
-class impplayerball : doomimpball{
-	default{
-		speed 18;
-		damage 4;
-	}
-}
-
 class DarkFast : Actor{
   Default{
     Radius 8;

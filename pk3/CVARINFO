@@ -4,9 +4,9 @@ user int impscape_clear = 0; //Si paso el juego (cualquier dificultad)
 user int impscape_ultraClear = 0; //Si paso el modo ultra
 
 //Shaders
-user noarchive int Shader = 0;
-user noarchive float shd_s3d_disp = 0.005;
-user noarchive float shd_cntr_contrast = 2.0;
+server noarchive int Shader = 0;
+server noarchive float shd_s3d_disp = 0.005;
+server noarchive float shd_cntr_contrast = 2.0;
 
 //El jugador puede volar??
 user noarchive bool AllowFly = false;

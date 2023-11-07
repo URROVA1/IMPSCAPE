@@ -117,7 +117,14 @@ class ImpArm : ImpscapeWeapon{
 		FireVerySlow:
 			IMPD F 5;
 			IMPD G 4 A_GunFlash;
-			IMPD H 5 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 5 {
+				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+					A_FireProjectile ("ImpPlayerBall_Faster");
+				}
+				else{
+					A_FireProjectile ("ImpPlayerBall");
+				}
+			}
 			IMPD I 4;
 			TNT1 A 5 A_ReFire;
 			IMPD J 4;
@@ -126,7 +133,14 @@ class ImpArm : ImpscapeWeapon{
 		FireSlow:
 			IMPD F 4;
 			IMPD G 4 A_GunFlash;
-			IMPD H 4 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 4{
+				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+					A_FireProjectile ("ImpPlayerBall_Faster");
+				}
+				else{
+					A_FireProjectile ("ImpPlayerBall");
+				}
+			}
 			IMPD I 4;
 			TNT1 A 4 A_ReFire;
 			IMPD J 4;
@@ -135,7 +149,14 @@ class ImpArm : ImpscapeWeapon{
 		FireMid:
 			IMPD F 4;
 			IMPD G 3 A_GunFlash;
-			IMPD H 4 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 4 {
+				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+					A_FireProjectile ("ImpPlayerBall_Faster");
+				}
+				else{
+					A_FireProjectile ("ImpPlayerBall");
+				}
+			}
 			IMPD I 3;
 			TNT1 A 4 A_ReFire;
 			IMPD J 3;
@@ -144,7 +165,14 @@ class ImpArm : ImpscapeWeapon{
 		FireFast:
 			IMPD F 3;
 			IMPD G 2 A_GunFlash;
-			IMPD H 3 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 3 {
+				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+					A_FireProjectile ("ImpPlayerBall_Faster");
+				}
+				else{
+					A_FireProjectile ("ImpPlayerBall");
+				}
+			}
 			IMPD I 2;
 			TNT1 A 3 A_ReFire;
 			IMPD J 2;
@@ -153,7 +181,14 @@ class ImpArm : ImpscapeWeapon{
 		FireVeryFast:
 			IMPD F 2;
 			IMPD G 2 A_GunFlash;
-			IMPD H 2 A_FireProjectile ("ImpPlayerBall");
+			IMPD H 2 {
+				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+					A_FireProjectile ("ImpPlayerBall_Faster");
+				}
+				else{
+					A_FireProjectile ("ImpPlayerBall");
+				}
+			}
 			IMPD I 2;
 			TNT1 A 2 A_ReFire;
 			IMPD J 2;
@@ -201,7 +236,12 @@ class ImpArm : ImpscapeWeapon{
 			IMPD G 1 A_GunFlash;
 			IMPD H 1 {
 				while(CountInv("AltFireEnergy") > 0){
-					A_FireProjectile ("ImpPlayerBall", random(-15,15));
+					if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
+						A_FireProjectile ("ImpPlayerBall_Faster",random(-15,15));
+					}
+					else{
+						A_FireProjectile ("ImpPlayerBall",random(-15,15));
+					}
 					A_TakeInventory("AltFireEnergy", 1);
 				}
 			}
@@ -261,3 +301,19 @@ class AltFireEnergy : inventory{
 			loop;
 	}
 }
+
+class impplayerball : doomimpball{
+	default{
+		speed 18;
+		damage 4;
+	}
+}
+
+class impplayerball_faster : doomimpball{
+	default{
+		speed 24;
+		damage 4;
+	}
+}
+
+class IMPPLAYER_FasterShooting : Inventory{}

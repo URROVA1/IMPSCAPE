@@ -37,6 +37,23 @@ Class FinalBoss_Base : BossBase{
 	}
 }
 
+class FinalBoss_Static : FinalBoss_Base{
+	default{
+		health 999999;
+		-SHOOTABLE;
+		SEESOUND "";
+	}
+	states{
+		Spawn:
+			APYT ABABAB 4 A_Look();
+			Loop;
+		See:
+			TNT1 A 0;
+			APYT AABBAABBAABBAABBAA 5;
+			Loop;
+	}
+}
+
 class FinalBoss_Phase1 : FinalBoss_Base{
 	default{
 		Damage 10;
@@ -250,6 +267,93 @@ class FinalBoss_Phase4 : FinalBoss_Base{
 	}
 }
 
+class FinalBoss_ShootingGiantBallThatDestroysAnything : FinalBoss_Base{
+	default{
+		health 999999;
+		-SHOOTABLE;
+	}
+	states{
+		Spawn:
+			APYT ABABAB 4 A_Look();
+			Loop;
+		See:
+			TNT1 A 0 A_StartSound("PortalLoading1",chan_body,0,1.0,0.1);
+			APYT AABBAABBAABBAABBAA 5;
+			APYT C 5{
+				A_StartSound("weapons/bfgf",chan_body,0,1.0,0.1);
+				let it = Level.CreateActorIterator(58,"BossTarget");
+				let spot = it.Next();
+				target = spot;
+				A_SpawnProjectile("FinalBoss_GiantBallThatDestroysAnything_Shot");
+			}
+		See2:
+			APYT AABBAABBAABBAABBAA 5;
+			Loop;
+	}
+}
+
+class FinalBoss_Phase5 : FinalBoss_Base{
+	default{
+		Damage 20;
+		Health 900;
+	}
+	States{
+		Spawn:
+			APYT ABABAB 4 A_Look();
+			Loop;
+		See:
+			TNT1 A 0 {bINVULNERABLE = false; TRANSLATION = -1;}
+			APYT C 12{
+				A_FaceTarget();
+				_CircleBullets("DoomImpBall",7);
+				_CircleBullets("FinalBoss_HyperExplosionShot", 5);
+			}
+			APYT DAABBAABB 2 A_Chase();
+			goto Missile;
+		Missile:
+			APYT A 5 {
+				A_StartSound("Marine/Charge", CHAN_WEAPON);
+				A_FaceTarget();
+			}
+			APYT CDCD 3{
+				A_SpawnProjectile("ArachnotronPlasma");
+			}
+			APYT CDCD 3{
+				A_SpawnProjectile("ArachnotronPlasma",32,0,5);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-5);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,15);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-15);
+			}
+			APYT CDCD 3{
+				A_SpawnProjectile("ArachnotronPlasma",32,0,10);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-10);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,20);
+				A_SpawnProjectile("ArachnotronPlasma",32,0,-20);
+			}
+			APYT A 20 A_FaceTarget();
+			TNT1 A 0 {bINVULNERABLE = true; TRANSLATION = 2;}
+			APYT B 4 A_SkullAttack(70);
+		Skull:
+			APYT AB 6{
+				for (double i = -15.0; i <= 15.0; i+=10.0){
+					A_SpawnProjectile("DoomImpBall",32,0,90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
+					A_SpawnProjectile("DoomImpBall",32,0,-90,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,i);
+				}
+			}
+			Goto Skull;
+		Pain:
+			APYT A 1 A_Pain();
+			Goto See;
+		Death:
+			TNT1 A 0 {bFLOAT = true; bNOGRAVITY = true;}
+			APYT BBB 0 A_SpawnProjectile("GravityExplosionFire",32.0,0.0,random(0,359),CMF_ABSOLUTEPITCH,random(0,-60));
+			APYT BBBBBBBBB 3 A_SpawnProjectile("ExplosionFX",random(0,128),random(-32,32),random(0,359),0);
+			TNT1 A 0 ACS_NamedExecute("EndBossBattle",0);
+			Stop;
+	}
+}
+
+
 class UACCyber_Final : UACCyber_Base{
 	default{
 		health 2000;
@@ -319,6 +423,36 @@ class FinalBoss_MineProjectile_Shot : Actor{
 			}
 			Loop;
 		Crash:
+			BFE1 CDE 6 BRIGHT;
+			Stop;
+	}
+}
+
+class FinalBoss_GiantBallThatDestroysAnything_Shot : Actor{
+	default{
+		PROJECTILE;
+		Radius 16;
+		Height 16;
+		Scale 1;
+		Speed 10;
+		Damage 10;
+		DeathSound "weapons/bfgx";
+	}
+	
+	States{
+		Spawn:
+			BFS1 ABAB 4 BRIGHT{
+				if (self.scalex < 4.0){
+					self.scalex += 0.2;
+					self.scaley += 0.2;
+				}
+				A_SpawnItem("ExplosionFX",0,64);
+			}
+			Loop;
+		Death:
+			TNT1 A 0{
+				ACS_NamedExecute("BossBattle_Final",0);
+			}
 			BFE1 CDE 6 BRIGHT;
 			Stop;
 	}
@@ -455,5 +589,34 @@ class FinalBoss_MineProjectile_Stand_Mine : Actor{
 			BFE1 CDE 6 BRIGHT;
 			TNT1 A 0;
 			stop;
+	}
+}
+
+class FinalBoss_HyperExplosionShot : Actor{
+	default{
+		PROJECTILE;
+		Radius 32;
+		Height 32;
+		Scale 2;
+		Speed 25;
+		Damage 10;
+		Translation 2;
+		Renderstyle "add";
+		ExplosionDamage 10;
+		-NOGRAVITY;
+		+FLOORHUGGER;
+	}
+	
+	States{
+		Spawn:
+			BFS1 ABAB 4 BRIGHT{
+				A_Explode();
+				A_SpawnItem("ExplosionFX");
+				A_FadeOut(0.2,1);
+			}
+			Loop;
+		Crash:
+			BFE1 CDE 6 BRIGHT;
+			Stop;
 	}
 }
