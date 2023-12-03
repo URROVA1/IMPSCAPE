@@ -31,7 +31,7 @@ map MAP01 "Demon contaiment D"{
 }
 
 map MAP02 "Demon control lab #2"{
-	music = "D_TKWALL"
+	music = "D_SERIAL"
 	next = "MAP03"
 	LevelNum = 2
 }
@@ -50,22 +50,31 @@ map MAP04 "Abandoned Computer Station"{
 }
 
 map MAP05 "Warehouse"{
-	music = "D_SERIAL"
+	cluster = 1
+	music = "D_TKWALL"
 	next = "MAP07"
 	Sky1 = "OSKY20"
 	Sky2 = "FIREBLU1", 2.5
 	LevelNum = 5
 }
 
-map MAP06 "UAC Bridge Dimension"{
+map MAP06 "Warehouse Computer"{
+	cluster = 1
 	music = "D_GUSANO"
-	next = "MAP07"
-	LevelNum = 5
+	//next = "MAP07"
+	LevelNum = 6
 	Sky1 = "HUBSKY"
 }
 
 map MAP07 "HUB"{
 	music = "D_MARS"
 	next = "MAP08"
-	LevelNum = 6
+	LevelNum = 7
+}
+
+map ENDING "Ending"{
+	sky1 = "FIRESK00"
+	music = "D_END"
+	LevelNum = 8
+	next = "EndTitle"
 }
