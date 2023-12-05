@@ -8,7 +8,7 @@ class DarkImpPlayer : ImpscapePlayerPawn{
 		Height 56;
 		Mass 100;
 		PainChance 255;
-		player.maxhealth 100;
+		Player.MaxHealth 100;
 		player.soundclass "ImpPlayer";
 		player.morphweapon "DarkImpArm";
 		Player.ColorRange 0, 0;
@@ -117,6 +117,8 @@ class DarkImpArm : ImpscapeWeapon{
 		  FireVerySlow:
 			DIMD F 5;
 			DIMD G 5 A_GunFlash;
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
 			DIMD H 5 A_FireCustomMissile ("DarkFast");
 			DIMD I 5;
 			TNT1 A 5 A_ReFire;
@@ -126,6 +128,8 @@ class DarkImpArm : ImpscapeWeapon{
 		  FireSlow:
 			DIMD F 4;
 			DIMD G 4 A_GunFlash;
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
 			DIMD H 4 A_FireCustomMissile ("DarkFast");
 			DIMD I 4;
 			TNT1 A 4 A_ReFire;
@@ -133,30 +137,36 @@ class DarkImpArm : ImpscapeWeapon{
 			Goto Ready;
 		  //Normal
 		  FireMid:
-			DIMD F 3;
+			DIMD F 4;
 			DIMD G 3 A_GunFlash;
-			DIMD H 3 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 4 A_FireCustomMissile ("DarkFast");
 			DIMD I 3;
-			TNT1 A 3 A_ReFire;
+			TNT1 A 4 A_ReFire;
 			DIMD J 3;
 			Goto Ready;
 		  //Rapido
 		  FireFast:
-			DIMD F 2;
+			DIMD F 3;
 			DIMD G 2 A_GunFlash;
 			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 3 A_FireCustomMissile ("DarkFast");
 			DIMD I 2;
-			TNT1 A 2 A_ReFire;
+			TNT1 A 3 A_ReFire;
 			DIMD J 2;
 			Goto Ready;
 		  //Muy rapido
 		  FireVeryFast:
-			DIMD F 1;
-			DIMD G 1 A_GunFlash;
-			DIMD H 1 A_FireCustomMissile ("DarkFast");
-			DIMD I 1;
-			TNT1 A 1 A_ReFire;
-			DIMD J 1;
+			DIMD F 2;
+			DIMD G 2 A_GunFlash;
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD H 2 A_FireCustomMissile ("DarkFast");
+			DIMD I 2;
+			TNT1 A 2 A_ReFire;
+			DIMD J 2;
 			Goto Ready;
 
 		Flash:
@@ -209,4 +219,28 @@ class DarkImpArm : ImpscapeWeapon{
 			DIMD J 5;
 			Goto Ready;
 	}
+}
+
+class DarkFast : Actor{
+  Default{
+    Radius 8;
+    Height 6;
+    Speed 21;
+    Damage 4;
+    RENDERSTYLE "ADD";
+    ALPHA 0.67;
+    SeeSound "imp/attack";
+    DeathSound "imp/shotx";
+    Decal "DoomImpScorch";
+    PROJECTILE;
+  }
+
+  States{
+  Spawn:
+    DKB1 AB 4 Bright;
+    Loop;
+  Death:
+    DKB1 CDE 4 Bright;
+    Stop;
+  }
 }
