@@ -50,18 +50,16 @@ map MAP04 "Abandoned Computer Station"{
 }
 
 map MAP05 "Warehouse"{
-	cluster = 1
 	music = "D_TKWALL"
-	next = "MAP07"
+	next = "MAP06"
 	Sky1 = "OSKY20"
 	Sky2 = "FIREBLU1", 2.5
 	LevelNum = 5
 }
 
 map MAP06 "Warehouse Computer"{
-	cluster = 1
 	music = "D_GUSANO"
-	//next = "MAP07"
+	next = "MAP07"
 	LevelNum = 6
 	Sky1 = "HUBSKY"
 }
