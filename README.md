@@ -12,7 +12,7 @@ Es un pk3 que va a tener 7 mapas.
 - **MAP04:** Terminado.
 - **MAP05:** Terminado.
 - **MAP06:** Terminado.
-- **MAP07:** Terminado. Falta implementar skills.
+- **MAP07:** Terminado.
 
 ## Estado de los temas (musica):
 
@@ -38,7 +38,7 @@ Its a pk3 that will have 6 maps.
 ## Map status:
 - **MAP01:** Finished.
 - **MAP02:** Finished.
-- **MAP03:** Finished.
+- **MAP03:** Finished. Skills uninplemented.
 - **MAP04:** Finished.
 - **MAP05:** Finished.
 - **MAP06:** Finished.
