@@ -107,64 +107,19 @@ class ImpArm : ImpscapeWeapon{
 			IMPD A 0 A_JumpIfNoAmmo ("AltFire");
 			//Aca salta a un estado depende cuantos FirePowerUp tengas.
 			//Osea, cuantos mas FirePowerUp tengas, mas rapido disparas.
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",4,"FireVeryFast");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",3,"FireFast");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",2,"FireMid");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",1,"FireSlow");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",0,"FireVerySlow");
+			//IMPD A 0 A_JumpIfInventory("FirePowerUp",4,"FireVeryFast");
+			//IMPD A 0 A_JumpIfInventory("FirePowerUp",3,"FireFast");
+			//IMPD A 0 A_JumpIfInventory("FirePowerUp",2,"FireMid");
+			//IMPD A 0 A_JumpIfInventory("FirePowerUp",1,"FireSlow");
+			//IMPD A 0 A_JumpIfInventory("FirePowerUp",0,"FireVerySlow");
 
-		//Muy lento (imp normal)
-		FireVerySlow:
-			IMPD F 5;
-			IMPD G 4 A_GunFlash;
-			IMPD H 5 {
-				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
-					A_FireProjectile ("ImpPlayerBall_Faster");
-				}
-				else{
-					A_FireProjectile ("ImpPlayerBall");
-				}
-			}
-			IMPD I 4;
-			TNT1 A 5 A_ReFire;
-			IMPD J 4;
-			Goto Ready;
-		//Lento
-		FireSlow:
-			IMPD F 4;
-			IMPD G 4 A_GunFlash;
-			IMPD H 4{
-				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
-					A_FireProjectile ("ImpPlayerBall_Faster");
-				}
-				else{
-					A_FireProjectile ("ImpPlayerBall");
-				}
-			}
-			IMPD I 4;
-			TNT1 A 4 A_ReFire;
-			IMPD J 4;
-			Goto Ready;
+			IMPD A 0 A_JumpIfInventory("FirePowerUp", 1, "FireVeryFast");
+			IMPD A 0 A_Jump(256,"FireMid");
+
 		//Normal
 		FireMid:
-			IMPD F 4;
-			IMPD G 3 A_GunFlash;
-			IMPD H 4 {
-				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
-					A_FireProjectile ("ImpPlayerBall_Faster");
-				}
-				else{
-					A_FireProjectile ("ImpPlayerBall");
-				}
-			}
-			IMPD I 3;
-			TNT1 A 4 A_ReFire;
-			IMPD J 3;
-			Goto Ready;
-		//Rapido
-		FireFast:
 			IMPD F 3;
-			IMPD G 2 A_GunFlash;
+			IMPD G 3 A_GunFlash;
 			IMPD H 3 {
 				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
 					A_FireProjectile ("ImpPlayerBall_Faster");
@@ -173,13 +128,14 @@ class ImpArm : ImpscapeWeapon{
 					A_FireProjectile ("ImpPlayerBall");
 				}
 			}
-			IMPD I 2;
+			IMPD I 3;
 			TNT1 A 3 A_ReFire;
-			IMPD J 2;
+			IMPD J 3;
 			Goto Ready;
+			
 		//Muy rapido
 		FireVeryFast:
-			IMPD F 2;
+			IMPD F 2 A_TakeInventory("FirePowerUp", 1);
 			IMPD G 2 A_GunFlash;
 			IMPD H 2 {
 				if (CheckInventory("IMPPLAYER_FasterShooting",1,AAPTR_PLAYER1)){
@@ -204,25 +160,12 @@ class ImpArm : ImpscapeWeapon{
 			IMPD F 5;
 		AltHold:
 			IMPD A 0 A_JumpIfInventory("AltFireEnergy", 6, "AltFireCharged");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",4,"AltVeryFast");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",3,"AltFast");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",2,"AltMid");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",1,"AltSlow");
-			IMPD A 0 A_JumpIfInventory("FirePowerUp",0,"AltVerySlow");
-		//Se van sumando los tics y haciendo mas lenta la carga.
-		AltVerySlow:
+			IMPD A 0 A_JumpIfInventory("FirePowerUp", 1, "AltFaster");
 			IMPD F 2 _A_JumpIfNotHold();
 			IMPD F 2 _A_JumpIfNotHold();
-		AltSlow:
+		AltFaster:
 			IMPD F 2 _A_JumpIfNotHold();
 			IMPD F 2 _A_JumpIfNotHold();
-		AltMid:
-			IMPD F 2 _A_JumpIfNotHold();
-			IMPD F 2 _A_JumpIfNotHold();
-		AltFast:
-			IMPD F 2 _A_JumpIfNotHold();
-			IMPD F 2 _A_JumpIfNotHold();
-		AltVeryFast:
 			IMPD F 2 _A_JumpIfNotHold();
 			IMPD G 2 {
 				A_StopSound(CHAN_WEAPON);
@@ -243,6 +186,7 @@ class ImpArm : ImpscapeWeapon{
 						A_FireProjectile ("ImpPlayerBall",random(-15,15));
 					}
 					A_TakeInventory("AltFireEnergy", 1);
+					A_TakeInventory("FirePowerUp", 1);
 				}
 			}
 			IMPD I 1;

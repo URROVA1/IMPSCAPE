@@ -57,8 +57,8 @@ map MAP05 "Warehouse"{
 	LevelNum = 5
 }
 
-map MAP06 "Warehouse Computer"{
-	music = "D_GUSANO"
+map MAP06 "Gate to Dimensional Hub"{
+	music = "D_SERIAL"
 	next = "MAP07"
 	LevelNum = 6
 	Sky1 = "HUBSKY"

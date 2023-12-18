@@ -1,9 +1,9 @@
 //Item que mejora la velocidad de disparo
-class FirePowerUp : inventory{
+class FirePowerUp : Ammo{
 	default{
-		inventory.amount 1;
-		inventory.maxamount 5;
-		inventory.PickUpMessage "Firepower upgraded! Now you shoot faster";
+		inventory.amount 80;
+		inventory.maxamount 100;
+		inventory.PickUpMessage "Fire Power Up! Now you shoot faster";
 	}
 	states{
     Spawn:
