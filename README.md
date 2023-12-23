@@ -1,4 +1,4 @@
-!(COVER.png)[Cover]
+![Cover](https://github.com/Urrova/IMPSCAPE/blob/master/COVER.png?raw=true)
 
 # Español
 

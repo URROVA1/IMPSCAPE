@@ -307,7 +307,7 @@ class FinalBoss_Phase5 : FinalBoss_Base{
 			TNT1 A 0 {bINVULNERABLE = false; TRANSLATION = -1;}
 			APYT C 12{
 				A_FaceTarget();
-				_CircleBullets("DoomImpBall",7);
+				_CircleBullets("DoomImpBall",10);
 				_CircleBullets("FinalBoss_HyperExplosionShot", 5);
 			}
 			APYT DAABBAABB 2 A_Chase();
