@@ -10,7 +10,7 @@ Es un pk3 que va a tener 7 mapas.
 
 - **MAP01:** Terminado.
 - **MAP02:** Terminado.
-- **MAP03:** Terminado. Falta implementar skills.
+- **MAP03:** Terminado.
 - **MAP04:** Terminado.
 - **MAP05:** Terminado.
 - **MAP06:** Terminado.
@@ -40,7 +40,7 @@ Its a pk3 that will have 6 maps.
 ## Map status:
 - **MAP01:** Finished.
 - **MAP02:** Finished.
-- **MAP03:** Finished. Skills uninplemented.
+- **MAP03:** Finished.
 - **MAP04:** Finished.
 - **MAP05:** Finished.
 - **MAP06:** Finished.
