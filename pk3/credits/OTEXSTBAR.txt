@@ -1,0 +1,50 @@
+Title                   : Otex STBAR
+Filename                : ###.wad
+Release date            : 3rd May 2020
+Author                  : Fuzzball
+Description             : Just an OTEX Styled Status bar complete with custom                           numbering in the standard Doom layout and theme!
+                          
+Additional Credits to   : Ukiro for the original OTEX I used to chop up and create                           this from.
+                          
+===========================================================================
+* What is included *
+
+Sounds                  : No
+Music                   : No
+Graphics                : Yes
+Dehacked/BEX Patch      : Nope
+Demos                   : Come on now
+Other                   : Love and care probably.
+
+* Play Information *
+
+Game                    : Doom or Doom 2
+Single Player           : Yes
+Cooperative 2-4 Player  : Maybe!
+Deathmatch 2-4 Player   : Who knows
+Other game styles       : Giraffe?
+Difficulty Settings     : NIGHTMARE
+
+* Construction *
+
+Base                    : New from scratch
+Build Time              : Yes
+Editor(s) used          : SLADE and Photoshop CS5
+May Not Run With...     : Gusto
+
+
+* Copyright / Permissions *
+
+Authors MAY use the contents of this file as a base for modification or
+reuse.  Permissions have been obtained from original authors for any of
+their resources modified or included in this file.
+
+You MAY distribute this file, provided you include this text file, with no
+modifications.  You may distribute this file in any electronic format (BBS,
+Diskette, CD, etc) as long as you include this file intact.  I have
+received permission from the original authors of any modified or included
+content in this file to allow further distribution.
+
+Hey you still here? Thanks for downloading! <3
+
+

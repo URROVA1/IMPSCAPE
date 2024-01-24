@@ -5,3 +5,5 @@
 .backup3
 *.pk3
 *.pk7
+butlerpush.bat
+build/*

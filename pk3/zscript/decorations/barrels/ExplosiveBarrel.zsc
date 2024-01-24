@@ -37,6 +37,7 @@ class DraggableExplosiveBarrel : SwitchableDecoration{
 					return;
 				}
 				
+				A_TakeInventory("AltFireEnergy", 6, 0, AAPTR_PLAYER1); //Saca la carga de AltFire
 				A_GiveInventory("ExplosiveBarrelWeapon",0,AAPTR_PLAYER1);
 				
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.

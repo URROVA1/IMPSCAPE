@@ -25,6 +25,7 @@ Class OilDrum : SwitchableDecoration{
 					return;
 				}
 				
+				A_TakeInventory("AltFireEnergy", 6, 0, AAPTR_PLAYER1); //Saca la carga de AltFire
 				A_GiveInventory("OilDrumWeapon",0,AAPTR_PLAYER1);
 				//Le saca al jugador cualquier tipo de brazo de imp que tenga.
 				if (CheckInventory("DarkImpTransform",1,AAPTR_PLAYER1))

@@ -1,4 +1,7 @@
 class ImpscapePlayerPawn : PlayerPawn {
+	default{
+		Player.MaxHealth 100;
+	}
 
 	void _take_arm(){
 		

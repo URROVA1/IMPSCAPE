@@ -2,6 +2,17 @@
 $limit weapons/plasmaf 4 //Limitados para no crear un errape con los sonidos de plasma
 $limit weapons/plasmax 4
 
+weapons/plasmafquieter "dsplasma"
+$volume weapons/plasmafquieter 0.35
+weapons/plasmaxquieter "dsfirxpl"
+$volume weapons/plasmaxquieter 0.35
+
+weapons/plasmafquiet "dsplasma"
+$volume weapons/plasmafquieter 0.6
+weapons/plasmaxquiet "dsfirxpl"
+$volume weapons/plasmaxquieter 0.6
+
+
 //Carga de AltFire
 ImpCharging "sounds/ImpCharging"
 

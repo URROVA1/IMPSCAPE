@@ -1,6 +1,7 @@
 //Item que mejora la velocidad de disparo
 class FirePowerUp : Ammo{
 	default{
+		+INVENTORY.FANCYPICKUPSOUND;
 		inventory.amount 80;
 		inventory.maxamount 100;
 		inventory.PickUpMessage "Fire Power Up! Now you shoot faster";
@@ -104,7 +105,7 @@ class DarkImpAmmo : Ammo{
 class DarkImpTransform : PowerMorph{
 	default{
 		PowerMorph.PlayerClass "DarkImpPlayer";
-		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH;
+		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH|MRF_FULLHEALTH;
 		Powerup.duration -60;
 	}
 }
@@ -185,7 +186,7 @@ class RocketImpAmmo : Ammo{
 class RocketImpTransform : PowerMorph{
 	default{
 		PowerMorph.PlayerClass "RocketImpPlayer";
-		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH;
+		PowerMorph.MorphStyle MRF_NEWTIDBEHAVIOUR|MRF_UNDOBYDEATH|MRF_FULLHEALTH;
 		Powerup.duration -30;
 	}
 }

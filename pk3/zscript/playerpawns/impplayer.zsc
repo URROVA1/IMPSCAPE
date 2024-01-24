@@ -157,23 +157,23 @@ class ImpArm : ImpscapeWeapon{
 			stop;
 
 		AltFire:
-			IMPD F 5;
+			IMPD F 1 A_Jump(256, 8);
 		AltHold:
-			IMPD A 0 A_JumpIfInventory("AltFireEnergy", 6, "AltFireCharged");
+			IMPD A 0 A_JumpIfInventory("AltFireEnergy", 5, "AltFireCharged");
 			IMPD A 0 A_JumpIfInventory("FirePowerUp", 1, "AltFaster");
-			IMPD F 2 _A_JumpIfNotHold();
+			IMPD F 1 _A_JumpIfNotHold();
 			IMPD F 2 _A_JumpIfNotHold();
 		AltFaster:
+			IMPD F 1 _A_JumpIfNotHold();
 			IMPD F 2 _A_JumpIfNotHold();
-			IMPD F 2 _A_JumpIfNotHold();
-			IMPD F 2 _A_JumpIfNotHold();
+			IMPD F 1 _A_JumpIfNotHold();
 			IMPD G 2 {
 				A_StopSound(CHAN_WEAPON);
 				A_StartSound("ImpCharging", CHAN_WEAPON);
 				A_GiveInventory("AltFireEnergy", 1);
 			}
 		AltFireCharged:
-			IMPD F 1;
+			IMPD F 2;
 			IMPD G 1 A_ReFire;
 		AltShoot:
 			IMPD G 1 A_GunFlash;

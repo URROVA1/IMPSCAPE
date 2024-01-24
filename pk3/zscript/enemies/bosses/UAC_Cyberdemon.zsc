@@ -40,11 +40,11 @@ class UACCyber_Phase1 : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 60, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 60, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 15, 60, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 60, 0);
 			ANNI E 6 A_FaceTarget();
 			goto see;
 		Death:
@@ -63,15 +63,15 @@ class UACCyber_Phase2 : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 5, 10, 0);
+			ANNI FFFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 5, 10, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 10, 20, 0);
+			ANNI FFFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 10, 20, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 15, 30, 0);
+			ANNI FFFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 30, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 20, 40, 0);
+			ANNI FFFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 20, 40, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 25, 50, 0);
+			ANNI FFFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 25, 50, 0);
 			ANNI E 6 A_FaceTarget();
 			
 			ANNI F 0 Bright{
@@ -109,19 +109,18 @@ class UACCyber_Phase3 : UACCyber_Base{
 			ANNI F 10 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,90,CMF_ABSOLUTEPITCH,0);
 			ANNI F 10 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,180,CMF_ABSOLUTEPITCH,0);
 			ANNI E 35 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,270,CMF_ABSOLUTEPITCH,0);
-			ANNI E 5 A_FaceTarget;
+			ANNI E 5 A_FaceTarget();
 			ANNI FFFFFFFFFFFFFFFFFF 3 {
-				A_FaceTarget();
-				A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,0,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 			
-				A_SpawnProjectile("Plasmaball",24,0,10,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Plasmaball",24,0,-10,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,10,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-10,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 				
-				A_SpawnProjectile("Plasmaball",24,0,20,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Plasmaball",24,0,-20,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 				
-				A_SpawnProjectile("Plasmaball",24,0,30,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Plasmaball",24,0,-30,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 			}
 			loop;
 		Death:
@@ -155,13 +154,13 @@ class UACCyber_Phase4 : UACCyber_Base{
 			ANNI FFFFF 3 Bright _SpreadBullets("ArachnotronPlasma", 4, 8, 0);
 			ANNI E 3 A_FaceTarget();
 			ANNI FFFFF 3 Bright {
-				_SpreadBullets("ArachnotronPlasma", 3, 6, 0, 25);
-				_SpreadBullets("ArachnotronPlasma", 3, 6, 0, -25);
+				_SpreadBullets("QuietSubPlasmaBall", 3, 6, 0, 25);
+				_SpreadBullets("QuietSubPlasmaBall", 3, 6, 0, -25);
 			}
 			ANNI E 3 A_FaceTarget();
 			ANNI FFFFF 3 Bright {
-				_SpreadBullets("ArachnotronPlasma", 3, 6, 0, 50);
-				_SpreadBullets("ArachnotronPlasma", 3, 6, 0, -50);
+				_SpreadBullets("QuietSubPlasmaBall", 3, 6, 0, 50);
+				_SpreadBullets("QuietSubPlasmaBall", 3, 6, 0, -50);
 			}
 			ANNI E 3 A_FaceTarget();
 			
@@ -198,11 +197,11 @@ class UACCyber_Phase1_normal : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 20, 40, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 20, 40, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 20, 40, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 20, 40, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 2 Bright _SpreadBullets("PlasmaBall", 20, 40, 0);
+			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 20, 40, 0);
 			ANNI E 6 A_FaceTarget();
 			goto see;
 		Death:
@@ -221,11 +220,11 @@ class UACCyber_Phase2_normal : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 4 Bright _SpreadBullets("ArachnotronPlasma", 5, 10, 0);
+			ANNI FFFFF 4 Bright _SpreadBullets("QuietSubPlasmaBall", 5, 10, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 4 Bright _SpreadBullets("ArachnotronPlasma", 10, 20, 0);
+			ANNI FFFFF 4 Bright _SpreadBullets("QuietSubPlasmaBall", 10, 20, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFFF 4 Bright _SpreadBullets("ArachnotronPlasma", 15, 30, 0);
+			ANNI FFFFF 4 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 30, 0);
 			ANNI E 6 A_FaceTarget();
 			
 			ANNI F 0 Bright{
@@ -261,10 +260,10 @@ class UACCyber_Phase3_normal : UACCyber_Base{
 			ANNI E 20 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,270,CMF_ABSOLUTEPITCH,0);
 			ANNI E 5 A_FaceTarget;
 			ANNI FFFFFFFFFFFFF 4 {
-				A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,0,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 				
-				A_SpawnProjectile("Plasmaball",24,0,20,CMF_ABSOLUTEPITCH,0);
-				A_SpawnProjectile("Plasmaball",24,0,-20,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 			}
 			loop;
 		Death:
@@ -298,13 +297,13 @@ class UACCyber_Phase4_normal : UACCyber_Base{
 			ANNI FFF 5 Bright _SpreadBullets("ArachnotronPlasma", 4, 5, 0);
 			ANNI E 3 A_FaceTarget();
 			ANNI FFF 5 Bright {
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, 25);
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, -25);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, 25);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, -25);
 			}
 			ANNI E 3 A_FaceTarget();
 			ANNI FFF 5 Bright {
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, 50);
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, -50);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, 50);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, -50);
 			}
 			ANNI E 5 A_FaceTarget();
 			
@@ -340,11 +339,11 @@ class UACCyber_Phase1_easy : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 3 Bright _SpreadBullets("PlasmaBall", 7, 14, 0);
+			ANNI FFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 7, 14, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 3 Bright _SpreadBullets("PlasmaBall", 7, 14, 0);
+			ANNI FFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 7, 14, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 3 Bright _SpreadBullets("PlasmaBall", 7, 14, 0);
+			ANNI FFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 7, 14, 0);
 			ANNI E 6 A_FaceTarget();
 			goto see;
 		Death:
@@ -363,11 +362,11 @@ class UACCyber_Phase2_easy : UACCyber_Base{
 			Loop;
 		Missile:
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 5 Bright _SpreadBullets("ArachnotronPlasma", 5, 10, 0);
+			ANNI FFFF 5 Bright _SpreadBullets("QuietSubPlasmaBall", 5, 10, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 5 Bright _SpreadBullets("ArachnotronPlasma", 8, 16, 0);
+			ANNI FFFF 5 Bright _SpreadBullets("QuietSubPlasmaBall", 8, 16, 0);
 			ANNI E 6 A_FaceTarget();
-			ANNI FFFF 5 Bright _SpreadBullets("ArachnotronPlasma", 10, 20, 0);
+			ANNI FFFF 5 Bright _SpreadBullets("QuietSubPlasmaBall", 10, 20, 0);
 			ANNI E 6 A_FaceTarget();
 			
 			ANNI F 0 Bright{
@@ -401,13 +400,13 @@ class UACCyber_Phase3_easy : UACCyber_Base{
 			ANNI F 25 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,90,CMF_ABSOLUTEPITCH,0);
 			ANNI E 5 A_FaceTarget;
 			ANNI FFFFFFFFFFFFF 5 {
-				A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,0,CMF_ABSOLUTEPITCH,0);
 			}
 			
 			ANNI E 25 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,270,CMF_ABSOLUTEPITCH,0);
 			ANNI E 5 A_FaceTarget;
 			ANNI FFFFFFFFFFFFF 5 {
-				A_SpawnProjectile("Plasmaball",24,0,0,CMF_ABSOLUTEPITCH,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,0,CMF_ABSOLUTEPITCH,0);
 			}
 			loop;
 		Death:
@@ -441,13 +440,13 @@ class UACCyber_Phase4_easy : UACCyber_Base{
 			ANNI FFF 5 Bright _SpreadBullets("ArachnotronPlasma", 4, 5, 0);
 			ANNI E 3 A_FaceTarget();
 			ANNI FFF 5 Bright {
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, 30);
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, -30);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, 30);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, -30);
 			}
 			ANNI E 3 A_FaceTarget();
 			ANNI FFF 5 Bright {
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, 60);
-				_SpreadBullets("ArachnotronPlasma", 2, 4, 0, -60);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, 60);
+				_SpreadBullets("QuietSubPlasmaBall", 2, 4, 0, -60);
 			}
 			ANNI E 5 A_FaceTarget();
 			
@@ -535,13 +534,15 @@ class UACCyber_BulletSpawner1 : PlasmaBall{
 class UACCyber_PlasmaBallShootsAnotherToPlayer : PlasmaBall{
 	default{
 		monster;
+		seesound "weapons/plasmafquieter";
+		DeathSound "weapons/plasmaxquieter";
 	}
 	states{
 		Spawn:
 		PLSS A 15 Bright;
 		TNT1 A 0 {
 		A_FaceTarget();
-		A_SpawnProjectile("PlasmaBall",0.0,0.0,0,0,0,AAPTR_PLAYER1);
+		A_SpawnProjectile("QuietSubPlasmaBall",0.0,0.0,0,0,0,AAPTR_PLAYER1);
 		}
 		stop;
 	}
