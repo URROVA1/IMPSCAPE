@@ -46,6 +46,7 @@ class UACCyber_Phase1 : UACCyber_Base{
 			ANNI E 6 A_FaceTarget();
 			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 15, 60, 0);
 			ANNI E 6 A_FaceTarget();
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			goto see;
 		Death:
 			ANNI E 0 A_Fall;
@@ -81,6 +82,7 @@ class UACCyber_Phase2 : UACCyber_Base{
 			A_SpawnProjectile("UACCyber_BulletSpawner1",32.0,0.0,270,CMF_ABSOLUTEPITCH,-50);
 			}
 			ANNI E 10;
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			
 			goto see;
 		Death:
@@ -203,6 +205,7 @@ class UACCyber_Phase1_normal : UACCyber_Base{
 			ANNI E 6 A_FaceTarget();
 			ANNI FFFFF 2 Bright _SpreadBullets("QuietSubPlasmaBall", 20, 40, 0);
 			ANNI E 6 A_FaceTarget();
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			goto see;
 		Death:
 			ANNI E 0 A_Fall;
@@ -232,6 +235,7 @@ class UACCyber_Phase2_normal : UACCyber_Base{
 			A_SpawnProjectile("UACCyber_BulletSpawner1",32.0,0.0,270,CMF_ABSOLUTEPITCH,-50);
 			}
 			ANNI E 10;
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			
 			goto see;
 		Death:
@@ -345,6 +349,7 @@ class UACCyber_Phase1_easy : UACCyber_Base{
 			ANNI E 6 A_FaceTarget();
 			ANNI FFFF 3 Bright _SpreadBullets("QuietSubPlasmaBall", 7, 14, 0);
 			ANNI E 6 A_FaceTarget();
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			goto see;
 		Death:
 			ANNI E 0 A_Fall;
@@ -373,6 +378,7 @@ class UACCyber_Phase2_easy : UACCyber_Base{
 			A_SpawnProjectile("UACCyber_BulletSpawner1",32.0,0.0,90,CMF_ABSOLUTEPITCH,-50);
 			}
 			ANNI E 10;
+			ANNI A 15 ACS_NamedExecute("BossTeleport", 0);
 			
 			goto see;
 		Death:
