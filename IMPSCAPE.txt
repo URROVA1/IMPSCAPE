@@ -1,0 +1,118 @@
+===========================================================================
+Update to               : URROVA
+Advanced engine needed  : GZDoom
+Primary purpose         : Single play
+===========================================================================
+Title                   : IMPSCAPE: The escape from UAC
+Filename                : IMPSCAPE.pk7
+Author                  : URROVA
+Email Address           : arovaurrova@gmail.com
+Other Files By Author   : FURDEMON.wad DIMWEIRD.pk3 ROCKETED.wad
+                          UAC_ARENA.wad ANCENTER.wad
+Misc. Author Info       : Website with mods & music: https://urrova.github.io
+
+Description             : HELL HAS BEEN INVADED
+                          Invaded by human marines, allied with the empire of
+                          the Union Aerospace Corporation.
+                          
+                          You're an imp. Those of the UAC captured you to
+                          make demon-control experiments. Now you have to
+                          escape from the UAC and return to your home, Hell!
+                          
+                          IMPSCAPE is a 7 maps modification for Doom II, for
+                          GZDoom. Fight against the UAC forces throught
+                          bases, prisons, factories and computers, and burn
+                          them with your fireballs!
+                          
+                          FEATURES:
+                          Play as an Imp, a brown bastard from hell, who
+                          heaves fireballs down the UAC marines throat (and
+                          takes several bullets to die).
+                          7 long maps full of marines and UAC forces!
+                          2 difficult bossfights!
+                          2 types of imp transformations (dark imp and rocket
+                          imp).
+                          You can grab barrels with use and throw them to
+                          enemies!
+                          You can free ally monsters to fight against the UAC
+                          forces!
+                          Available on English and Spanish.
+                          
+                          INSTALLATION/SETTINGS:
+                          To play the mod:
+                          You need the GZDoom engine, available here:
+                          https://zdoom.org/downloads
+                          Also you need the DOOM2.wad game file from the
+                          original game, available on Steam/GOG.
+                          If you have installed the game from Steam or GOG,
+                          or you have the DOOM2.wad file on GZDoom's folder,
+                          you can drag and drop the pk7 file to the
+                          gzdoom.exe executable to play.
+                          
+                          GZDoom settings:
+                          Dont use software renderer, use hardware renderer
+                          instead (OpenGL/Vulkan).
+                          Jumping and crouching are blocked, but freelook is
+                          recommended (and sometimes required)
+                          
+                          SOUNDTRACK, ETC:
+                          The soundtrack from IMPSCAPE is available at
+                          soundcloud: https://on.soundcloud.com/Bh4mL
+                          
+                          Thanks for playing! If you want to see more of my
+                          stuff, there's my website:
+                          https://urrova.github.io/
+                          or go to my itch.io site: https://urrova.itch.io/
+                          The mod code (unpacked pk7) is also on github:
+                          https://github.com/Urrova/IMPSCAPE
+
+Additional Credits to   : See CREDITS lump and CREDITS folder inside the pk7
+===========================================================================
+* What is included *
+
+New levels              : 7
+Sounds                  : Yes
+Music                   : Yes
+Graphics                : Yes
+Dehacked/BEX Patch      : No
+Demos                   : No
+Other                   : ZScript and GZDoom stuff
+Other files required    : None
+
+
+* Play Information *
+
+Game                    : Doom 2
+Map #                   : MAP01-MAP07
+Single Player           : Designed for
+Cooperative 2-4 Player  : No
+Deathmatch 2-4 Player   : No
+Other game styles       : None
+Difficulty Settings     : Yes
+
+
+* Construction *
+
+Base                    : New from scratch
+Editor(s) used          : Ultimate Doom Builder, SLADE3
+May Not Run With        : Anything that isnt GZDoom
+Tested With             : GZDoom 4.10.0
+
+
+* Copyright / Permissions *
+
+This work is licensed under the Creative Commons Attribution 4.0
+International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/4.0/
+
+You are free to copy and redistribute the material in any medium or format;
+and remix, transform, and build upon the material for any purpose, even
+commercially. If you do so, you must give appropriate credit, provide a link
+to the license, and indicate if changes were made. You may do so in any
+reasonable manner, but not in any way that suggests the licensor endorses you
+or your use.
+
+* Where to get the file that this text file describes *
+
+The Usual: ftp://archives.gamers.org/pub/idgames/ and mirrors
+Web sites: https://urrova.itch.io/impscape

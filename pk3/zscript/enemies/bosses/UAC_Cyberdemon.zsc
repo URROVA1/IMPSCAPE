@@ -112,17 +112,17 @@ class UACCyber_Phase3 : UACCyber_Base{
 			ANNI F 10 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,180,CMF_ABSOLUTEPITCH,0);
 			ANNI E 35 A_SpawnProjectile("UACCyber_BulletSpawner2",8,0,270,CMF_ABSOLUTEPITCH,0);
 			ANNI E 5 A_FaceTarget();
-			ANNI FFFFFFFFFFFFFFFFFF 3 {
+			ANNI FFFFFFFFFFFFF 5 {
 				A_SpawnProjectile("QuietSubPlasmaBall",24,0,0,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 			
-				A_SpawnProjectile("QuietSubPlasmaBall",24,0,10,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
-				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-10,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
-				
-				A_SpawnProjectile("QuietSubPlasmaBall",24,0,20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
-				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-20,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,15,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-15,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 				
 				A_SpawnProjectile("QuietSubPlasmaBall",24,0,30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 				A_SpawnProjectile("QuietSubPlasmaBall",24,0,-30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				
+				//A_SpawnProjectile("QuietSubPlasmaBall",24,0,30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
+				//A_SpawnProjectile("QuietSubPlasmaBall",24,0,-30,CMF_ABSOLUTEPITCH|CMF_AIMDIRECTION,0);
 			}
 			loop;
 		Death:
