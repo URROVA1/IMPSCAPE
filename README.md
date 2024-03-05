@@ -1,60 +1,49 @@
 ![Cover](https://github.com/Urrova/IMPSCAPE/blob/master/COVER.png?raw=true)
 
-# Español
+![Hell](https://static.doomworld.com/monthly_2024_03/image.png.40490b6c808621ea1e1a988c75af2e5b.png)
 
-**IMPSCAPE** es un mod de DOOM II para GZDoom, en donde sos un imp capturado por la UAC, para hacer expermientos de control demoniaco. Tenes que escapar de la misma base de la UAC.
-Es un pk3 que va a tener 7 mapas.
+Invaded by human space marines, allied with the empire of the Union Aerospace Corporation.
 
+**You're an imp.** Those of the UAC captured you, and tons of other demons, to make demon-control experiments. Now you have to escape from the UAC and return to your home, Hell!
 
-## Estado de los mapas:
+**IMPSCAPE** is a 7 maps modification for Doom II, for GZDoom. Fight against the UAC forces throught bases, prisons, factories and computers, and burn them with your fireballs!
 
-- **MAP01:** Terminado.
-- **MAP02:** Terminado.
-- **MAP03:** Terminado.
-- **MAP04:** Terminado.
-- **MAP05:** Terminado.
-- **MAP06:** Terminado.
-- **MAP07:** Terminado.
+**READ THE MANUAL BEFORE PLAYING.** It has important information.
 
-## Estado de los temas (musica):
+![Features](https://img.itch.zone/aW1nLzE0NTcyOTY2LnBuZw==/original/gz4UeW.png)
 
-- **MAP01:** Terminado: Entryway (D_ENTRY)
-- **MAP02:** Terminado: Serial Number (D_SERIAL)
-- **MAP03:** Terminado: Ignis Machina (D_IGNIS)
-- **MAP04:** Terminado: Agujero Gusano (D_GUSANO)
-- **MAP05:** Terminado: Robotic Invasion (D_TEKWALL)
-- **MAP06:** Terminado: Serial Number (D_SERIAL)
-- **MAP07:** Terminado: Mirrored Mars (D_MARS)
-- **Jefe:** Terminado: Muerte por Danmaku (D_BOSS)
-- **Autodestruccion:** Terminado: Estabilidad de C4 (D_C4)
-- **Jefe final:** Terminado: D_FBOSS
-- **Menu de juego:** Terminado: (D_INTRO)
+- Play as an Imp, a brown bastard from hell, who heaves fireballs down the UAC marines throat (and takes several bullets to die).
+- 7 long maps full of marines and UAC forces!
+- 2 difficult bossfights!
+- 2 types of imp transformations (dark imp and rocket imp).
+- You can grab barrels and throw them to enemies!
+- You can free ally monsters to fight against the UAC forces!
+- Available on English and Spanish.
 
--------------------------------------------------------------------------------------------------
-# English
+![Imp](https://img.itch.zone/aW1nLzE0NTczNTYwLmdpZg==/original/i28pE%2B.gif)
 
-**IMPSCAPE** is a DOOM II mod for GZDoom, where you are an imp captured by the UAC, to make demon control experiments. You have to escape the same UAC base.
-Its a pk3 that will have 6 maps.
+![Installation](https://img.itch.zone/aW1nLzE0NTczMDEwLnBuZw==/original/XA6vqg.png)
 
+**To play the mod:**
+You need the GZDoom engine, available here: https://zdoom.org/downloads
+Also you need the DOOM2.wad game file from the original game, available on Steam/GOG.
+If you have installed the game from Steam or GOG, or you have the DOOM2.wad file on GZDoom's folder, you can drag and drop the pk7 file to the gzdoom.exe executable to play.
 
-## Map status:
-- **MAP01:** Finished.
-- **MAP02:** Finished.
-- **MAP03:** Finished.
-- **MAP04:** Finished.
-- **MAP05:** Finished.
-- **MAP06:** Finished.
-- **MAP07:** Finished.
+**GZDoom settings:**
+Dont use software renderer, use hardware renderer instead (OpenGL/Vulkan).
+Jumping and crouching are blocked, but freelook is recommended (and sometimes required)
 
-## Music status:
-- **MAP01:** Finished: Entryway (D_ENTRY)
-- **MAP02:** Finished: Serial Number (D_SERIAL)
-- **MAP03:** Finished: Ignis Machina (D_IGNIS).
-- **MAP04:** Finished: Agujero Gusano (D_GUSANO).
-- **MAP05:** Finished: Robotic Invasion (D_TEKWALL)
-- **MAP06:** Finished: Serial Number (D_SERIAL)
-- **MAP07:** Finished: Mirrored Mars (D_MARS).
-- **Boss:** Finished: Muerte por Danmaku (D_BOSS).
-- **Final Boss:** Finished (D_FBOSS).
-- **Autodestruction:** Finished: Estabilidad de C4 (D_C4).
-- **Game Menu:** Finished (D_INTRO).
+![Soundtrack](https://img.itch.zone/aW1nLzE0NTczMjU0LnBuZw==/original/KkPTFv.png)
+
+The soundtrack from IMPSCAPE is available at soundcloud: [https://on.soundcloud.com/Bh4mL](https://on.soundcloud.com/Bh4mL)
+
+![DOWNLOAD](https://static.doomworld.com/monthly_2024_03/1635325540_descarga(2).png.34a67c4a384af6a33752981fff130482.png)
+
+**Download the mod from:**
+
+- itch.io page: https://urrova.itch.io/impscape
+- /idgames: coming soon
+
+My other doom mods: https://urrova.github.io/mods.html
+
+**Thanks for playing!**
