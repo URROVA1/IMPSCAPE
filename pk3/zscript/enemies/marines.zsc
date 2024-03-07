@@ -592,16 +592,18 @@ class ChainsawMarineEnemy : MarineChainsaw{
 			Loop;
 		See:
 			//Perdon dios de las buenas practicas de la programacion por hacer esto
-			ALY7 A 2 { A_Chase("_a_chase_default", "_a_chase_default", CHF_FASTCHASE); A_MarineNoise(); }
-			ALY7 ABB 2 A_Chase("_a_chase_default", "_a_chase_default", CHF_FASTCHASE);
-			ALY7 A 2 { A_Chase("_a_chase_default", "_a_chase_default", CHF_FASTCHASE); A_MarineNoise(); }
-			ALY7 ABB 2 A_Chase("_a_chase_default", "_a_chase_default", CHF_FASTCHASE);
+			ALY7 A 2 { A_Chase("Meele.Chainsaw", "_a_chase_default", 0); A_MarineNoise(); }
+			ALY7 ABB 2 A_Chase("Meele.Chainsaw", "_a_chase_default", 0);
+			ALY7 A 2 { A_Chase("Meele.Chainsaw", "_a_chase_default", 0); A_MarineNoise(); }
+			ALY7 ABB 2 A_Chase("Meele.Chainsaw", "_a_chase_default", 0);
 			Loop;
 		Meele:
+			Goto Meele.Chainsaw;
+		Meele.Chainsaw:
 			ALY7 E 4 A_MarineNoise;
 			ALY7 E 4 A_M_Saw;
 			ALY7 E 0 A_M_SawRefire;
-			Goto Melee+1;
+			Goto Melee.Chainsaw+1;
 			ALY7 A 0;
 			Goto See;
 		Pain:
