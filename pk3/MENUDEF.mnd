@@ -1,4 +1,4 @@
-DEFAULTLISTMENU{
+DEFAULTLISTMENU {
 	Font "BigFont", "Untranslated"
 	LineSpacing 20
 	Selector "M_SKULL1", -32, -5
@@ -7,7 +7,7 @@ DEFAULTLISTMENU{
 }
 
 //Menu Principal
-ListMenu "MainMenu"{
+ListMenu "MainMenu" {
 	StaticPatch 94, 2, "M_DOOM"
 	LineSpacing 16
 	Position 97, 64
@@ -18,4 +18,32 @@ ListMenu "MainMenu"{
 	TextItem "Save Game", "s", "SaveGameMenu"
 	TextItem "Read This!", "i", "ReadThisMenu"
 	TextItem "Quit Game", "q", "QuitMenu"
+}
+
+//Opciones para impscape
+AddOptionMenu "OptionsMenu" {
+	StaticText "MOD SETTINGS"
+	Submenu "IMPSCAPE Settings", "ImpscapeSettings"
+}
+
+OptionMenu "ImpscapeSettings" {
+    Title "IMPSCAPE Settings"
+	StaticText "Language settings"
+    Option "Language", "impscape_language", "ImpscapeLanguages"
+	StaticText ""
+	StaticText "Visual settings"
+	Option "Fullscreen shaders", "shaders_enabled", "OnOff"
+	//UNDER CONSTRUCTION
+	/*
+	Option "Final battle backgrounds", "finalboss_background_enabled", "OnOff"
+	StaticText ""
+	StaticText ""
+	StaticText "Disable the final boss backgrounds", "darkgray"
+	StaticText "if you have performance problems at MAP07.", "darkgray"
+	*/
+}
+
+OptionValue "ImpscapeLanguages" {
+	0, "English"
+	1, "Español"
 }

@@ -2,6 +2,13 @@ class eh_Shaders : StaticEventHandler {
 	override void RenderOverlay(RenderEvent e) {
 		PlayerInfo p = players[consoleplayer];
 		
+		if (!CVar.GetCVar("shaders_enabled",p).GetInt()) {
+			Shader.SetEnabled(p, "Stereo3D", false);
+			Shader.SetEnabled(p, "Contrast", false);
+			Shader.SetEnabled(p, "Negative", false);
+			return;
+		}
+		
 		switch (CVar.GetCVar("Shader",p).GetInt()){
 		case 0:
 			Shader.SetEnabled(p, "Stereo3D", false);
