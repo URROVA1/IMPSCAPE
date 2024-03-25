@@ -149,14 +149,17 @@ class ImpscapeStatusBar : BaseStatusBar
 	{
 		int amt1, maxamt;
 		[amt1, maxamt] = GetAmount("Firepowerup");
+		DrawImage("FPUHUD", (260, 170), DI_ITEM_OFFSETS);
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 173), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 173), DI_TEXT_ALIGN_RIGHT);
 		
 		[amt1, maxamt] = GetAmount("DarkImpAmmo");
+		DrawImage("DIOHUD", (260, 179), DI_ITEM_OFFSETS);
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 182), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 182), DI_TEXT_ALIGN_RIGHT);
 		
 		[amt1, maxamt] = GetAmount("RocketImpAmmo");
+		DrawImage("RIOHUD", (260, 188), DI_ITEM_OFFSETS);
 		DrawString(mIndexFont, FormatNumber(amt1, 3), (288, 191), DI_TEXT_ALIGN_RIGHT);
 		DrawString(mIndexFont, FormatNumber(maxamt, 3), (314, 191), DI_TEXT_ALIGN_RIGHT);
 		
@@ -219,6 +222,14 @@ class ImpscapeStatusBar : BaseStatusBar
 		if (isInventoryBarVisible())
 		{
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
+		}
+		
+		//TIME
+		PlayerInfo p = players[consoleplayer];
+		int cvar_timeout = CVar.GetCVar("_powerup_timeout").GetInt();
+		if (cvar_timeout > 0) {
+			DrawString(mHUDFont, FormatNumber(cvar_timeout), (0, 0), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "time", (0,0), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
 		}
 	}
 	
