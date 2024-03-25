@@ -5,6 +5,7 @@ GameInfo{
    TitleTime = 2147483647 //INFINITE
    TitleMusic = "D_INTRO"
    IntermissionMusic = "D_TELEPT"
+   StatusBarClass = "ImpscapeStatusBar"
    
    InfoPage = "HELP", "HELP2", "HELP3", "CREDIT", "CREDIT2"
    CreditPage = "CREDIT", "CREDIT2"

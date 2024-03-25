@@ -13,6 +13,7 @@ version "2.5"
 #include "zscript/weapons.zsc"
 #include "zscript/playerpawns.zsc"
 #include "zscript/hazards.zsc"
+#include "zscript/ui.zsc"
 
 /*
 Someone wants some spaghetti??? nyeh heh heh heh!!! *Bonetrousle starts playing*

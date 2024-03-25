@@ -7,3 +7,4 @@
 *.pk7
 butlerpush.bat
 build/*
+_nogit/*
