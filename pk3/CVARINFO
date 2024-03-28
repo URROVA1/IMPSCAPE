@@ -14,5 +14,7 @@ server noarchive int _powerup_timeout = 0;
 user bool shaders_enabled = true;
 user bool finalboss_background_enabled = true;
 
+user bool impscape_alttimer = false;
+
 //El jugador puede volar??
 user noarchive bool AllowFly = false;

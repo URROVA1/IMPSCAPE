@@ -160,7 +160,7 @@ class RocketImpOrbItem : CustomInventory{
 
 	states{
     Spawn:
-      DIOB ABC 5 BRIGHT;
+      RIOB ABC 5 BRIGHT;
       loop;
 	Pickup: 
 		TNT1 A -1 {
@@ -178,7 +178,7 @@ class RocketImpAmmo : Ammo{
 	States
 		{
 		Spawn:
-			DIOB A -1;
+			RIOB A -1;
 			Stop;
 		}
 }

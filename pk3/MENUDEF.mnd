@@ -41,6 +41,7 @@ OptionMenu "ImpscapeSettings" {
 	StaticText "Disable the final boss backgrounds", "darkgray"
 	StaticText "if you have performance problems at MAP07.", "darkgray"
 	*/
+
 }
 
 OptionValue "ImpscapeLanguages" {

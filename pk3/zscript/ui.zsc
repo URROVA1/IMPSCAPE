@@ -178,6 +178,7 @@ class ImpscapeStatusBar : BaseStatusBar
 
 	protected void DrawFullScreenStuff ()
 	{
+		
 		Vector2 iconbox = (40, 20);
 		// Draw health
 		let berserk = CPlayer.mo.FindInventory("PowerStrength");
@@ -196,7 +197,13 @@ class ImpscapeStatusBar : BaseStatusBar
 		if (ammotype1 != null)
 		{
 			DrawInventoryIcon(ammotype1, (-14, -4));
-			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
+			if (ammotype1 is "MonsterMana") {
+				int fpu = GetAmount("Firepowerup");
+				DrawString(mHUDFont, FormatNumber(fpu, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
+			}
+			else {
+				DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
+			}
 			invY -= 20;
 		}
 		if (ammotype2 != null && ammotype2 != ammotype1)
@@ -228,9 +235,10 @@ class ImpscapeStatusBar : BaseStatusBar
 		PlayerInfo p = players[consoleplayer];
 		int cvar_timeout = CVar.GetCVar("_powerup_timeout").GetInt();
 		if (cvar_timeout > 0) {
-			DrawString(mHUDFont, FormatNumber(cvar_timeout), (0, 0), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-			DrawString(noMonospaceSmallfont, "time", (0,0), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(mHUDFont, FormatNumber(cvar_timeout), (160, -20), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "time", (146, -30), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
 		}
+		
 	}
 	
 	protected virtual void DrawFullscreenKeys()
