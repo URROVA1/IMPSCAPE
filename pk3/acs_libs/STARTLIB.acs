@@ -57,7 +57,7 @@ script "MorphCounter" (int seconds){
 	log(s:"executed");
 	SetFont("BIGFONT");
 	for (int i = seconds; i > 0; i--){
-		if (GetCVar("hud_althud")) {
+		if (GetCVar("hud_althud") == 1 && GetCVar("screenblocks") == 11) {
 			hudmessage(d:i;HUDMSG_PLAIN,81353,CR_TAN,0.5,0.95,2.0,1.0,1.0,1.0);
 		}
 	
