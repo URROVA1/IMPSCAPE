@@ -542,6 +542,7 @@ class UACCyber_PlasmaBallShootsAnotherToPlayer : PlasmaBall{
 		monster;
 		seesound "weapons/plasmafquieter";
 		DeathSound "weapons/plasmaxquieter";
+		-COUNTKILL;
 	}
 	states{
 		Spawn:

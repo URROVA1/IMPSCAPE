@@ -107,18 +107,26 @@ class ImpscapeStatusBar : BaseStatusBar
 		//TIME
 		PlayerInfo p = players[consoleplayer];
 		int cvar_timeout = CVar.GetCVar("_powerup_timeout").GetInt();
-		if (cvar_timeout > 0) {
-			DrawString(mHUDFont, FormatNumber(cvar_timeout), (138, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-			
+		if (_powerup_timeout > 0) {
+			DrawString(mHUDFont, FormatNumber(_powerup_timeout), (138, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
 		}
 		
 		
 		/*TEXTS*/
-		DrawString(noMonospaceSmallfont, "ammo", (24,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
-		DrawString(noMonospaceSmallfont, "health", (74,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
-		DrawString(noMonospaceSmallfont, "armor", (206,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
-		DrawString(noMonospaceSmallfont, "time", (122,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
-		
+		CVar impscape_lang_cvar = CVar.GetCVar("impscape_language", p);
+		int impscape_l = impscape_lang_cvar.GetInt();
+		if (impscape_l == 0){ 
+			DrawString(noMonospaceSmallfont, "power", (24,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "health", (74,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "armor", (206,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "time", (122,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+		}
+		if (impscape_l == 1){ 
+			DrawString(noMonospaceSmallfont, "poder", (24,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "salud", (74,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "armadura", (206,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			DrawString(noMonospaceSmallfont, "tiempo", (122,188), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+		}
 	}
 	
 	protected virtual void DrawBarKeys()
@@ -234,9 +242,15 @@ class ImpscapeStatusBar : BaseStatusBar
 		//TIME
 		PlayerInfo p = players[consoleplayer];
 		int cvar_timeout = CVar.GetCVar("_powerup_timeout").GetInt();
+		int impscape_language= CVar.GetCVar("impscape_language", p).GetInt();
 		if (cvar_timeout > 0) {
 			DrawString(mHUDFont, FormatNumber(cvar_timeout), (160, -20), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-			DrawString(noMonospaceSmallfont, "time", (146, -30), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			if (impscape_language == 0){
+				DrawString(noMonospaceSmallfont, "time", (146, -30), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			}
+			if (impscape_language == 1){
+				DrawString(noMonospaceSmallfont, "tiempo", (146, -30), DI_TEXT_ALIGN_CENTER|DI_NOSHADOW);
+			}
 		}
 		
 	}
